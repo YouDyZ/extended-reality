@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    content: attr(data-unselectable);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/*
+    INPUT RANGE GENERATOR
+
+*/
+
+input[type='range'] {
+    height: 25px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+    background-color: #3e6b21;
+}
+input[type='range']:focus {
+    outline: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000;
+    background: #667c57;
+    border-radius: 1px;
+    border: 0px solid #000000;
+}
+input[type='range']::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #b6d2a5;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #7ea564;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+}
+input[type='range']:focus::-webkit-slider-runnable-track {
+    background: #b6d2a5;
+}
+input[type='range']::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000;
+    background: #b6d2a5;
+    border-radius: 1px;
+    border: 0px solid #000000;
+}
+input[type='range']::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #b6d2a5;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #7ea564;
+    cursor: pointer;
+}
+input[type='range']::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+input[type='range']::-ms-fill-lower {
+    background: #b6d2a5;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+}
+input[type='range']::-ms-fill-upper {
+    background: #b6d2a5;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+}
+input[type='range']::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #b6d2a5;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #7ea564;
+    cursor: pointer;
+}
+input[type='range']:focus::-ms-fill-lower {
+    background: #b6d2a5;
+}
+input[type='range']:focus::-ms-fill-upper {
+    background: #b6d2a5;
+}
+
+li#gender {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+li#gender input[type='radio'] {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+li#gender .component {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+li#gender label {
+    margin: 0 20px;
+    position: relative;
+}
+
+li#gender label .fas {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 4px;
+    font-size: 24px;
+    border-radius: 50%;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), -2px -2px 6px rgba(0, 0, 0, 0.8);
+}
+
+li#gender label .fas:hover {
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), -2px -2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 10px rgba(255, 255, 255, 0.05), inset -2px -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+li#gender label input:checked ~ .fas {
+    color: #7ea564;
+    text-shadow: 0px 0px #7ea564, 0 0 20px #7ea564;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), -2px -2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 10px rgba(255, 255, 255, 0.05), inset -2px -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+.unselectable {
+    visibility: hidden;
+}
+
+.selectable {
+    visibility: visible;
+}
+
+.side {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: translate(0, 0);
+}
+.menu {
+    width: 350px;
+
+    height: auto;
+    overflow: hidden;
+}
+
+.item {
+    border-top: 1px, solid black;
+    overflow: hidden;
+}
+
+.btn {
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 3px 3px rgba(25, 25, 25, 1);
+    font-size: 40px;
+    display: block;
+    padding: 16px 20px 16px 45px;
+    background: #7ea564;
+    color: rgba(220, 220, 220, 1);
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 0px, 100% 100%, 50px 100%, 0px 0px);
+    border-bottom: 3px rgba(80, 80, 80, 1) solid;
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: rgb(8, 99, 8);
+    left: 20px;
+    bottom: -7px;
+    transform: rotate(45deg);
+}
+
+.smenu {
+    width: 300px;
+    position: relative;
+    left: 50px;
+    background: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    transition: max-height 1s;
+    max-height: 0;
+}
+
+.item#detail:target .smenu {
+    max-height: 9999999999px;
+}
+
+.item:target .smenu {
+    max-height: 9999999999px;
+}
+
+.item#headmenue:target .smenu {
+    max-height: 9999999999px;
+}
+
+.item#gender:target .smenu {
+    max-height: 9999999999px;
+}
+
+.item#kleidung:target .smenu {
+    max-height: 9999999999px;
+}
+
+.smenu div.component {
+    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+}
+
+.smenu div.component div.head {
+    margin: 0 0 10px 0;
+    text-align: center;
+    display: block;
+    text-shadow: 2px 2px rgba(25, 25, 25, 1);
+}
+
+.smenu div.component div.menuepoint {
+    margin: auto;
+    text-align: center;
+}
+
+.smenu div.component div.menuepoint button {
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.smenu div.component div.menuepoint button i {
+    font-size: 15px;
+}
+
+.smenu div.component div.menuepoint button:hover i.fa-angle-left {
+    text-shadow: 1px 0px rgba(255, 225, 225, 1);
+}
+
+.smenu div.component div.menuepoint button:hover i.fa-angle-right {
+    text-shadow: -1px 0px rgba(255, 225, 225, 1);
+}
+
+.smenu div.component div.menuepoint input[type='number'] {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    padding: 2px 0 2px 0;
+
+    border: none;
+    text-align: center;
+    width: 100px;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+
+    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+.smenu div.component div.menuepoint div.itemoption {
+    margin: 0 0 5px 0;
+}
+
+.menu div.component div.itemoption {
+    background-color: #3e6b21;
+}
+
+.smenu div.component {
+    display: block;
+    padding: 16px 26px;
+    color: rgba(220, 220, 220, 1);
+    background-color: #3e6b21;
+    font-size: 14px;
+    margin: 4px 0;
+    position: relative;
+    margin: 0 0 5px 0;
+}
+
+.smenu div.component-first {
+    margin: 0 0 5px 0;
+}
+
+.smenu div.component:before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #b6d2a5;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+}
+
+li#gender .smenu div.component:hover::before {
+    opacity: 0;
+}
+
+.smenu div.component:hover::before {
+    opacity: 1;
+}
+
+.head-margin-botton h1 {
+    margin-bottom: 0x;
+}
+
+.cheekbones h1 {
+    font-size: 1.7em;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.wrapper input#rotation {
+    width: 50%;
+    position: absolute;
+    bottom: 10px;
+    left: 25%;
+    background-color: transparent;
+}
+
+.wrapper input#camheight {
+    width: 30%;
+    position: absolute;
+    left: -10%;
+    top: 0;
+    background-color: transparent;
+    transform: rotate(270deg);
+    margin-top: 25%;
+}
+
+.wrapper input#camzoom {
+    width: 50%;
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    background-color: transparent;
+}

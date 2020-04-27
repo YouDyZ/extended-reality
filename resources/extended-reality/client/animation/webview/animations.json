@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Trinken",
+        "anim-dic": "amb@code_human_wander_clipboard@male@base",
+        "anim-name": "static"
+    },
+    {
+        "name": "Essen",
+        "anim-dic": "amb@code_human_wander_eating_donut@female@base",
+        "anim-name": "static"
+    },
+    {
+        "name": "Rauchen",
+        "anim-dic": "amb@code_human_wander_smoking@male@idle_a",
+        "anim-name": "idcle_a"
+    }
+]

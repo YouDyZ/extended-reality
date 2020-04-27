@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Index" />
+        <link href="style.css" type="text/css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/8cda8c20d4.js" crossorigin="anonymous"></script>
+        <link
+            href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="script.js"></script>
+    </head>
+
+    <body id="elementToFade">
+        <div class="wrapper-all">
+            <div class="login content">
+                <div class="head">
+                    <h1>
+                        Login
+                    </h1>
+                </div>
+                <div class="block">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="Passwort" placeholder="Passwort" />
+                </div>
+
+                <p id="message"></p>
+                <div class="buttons">
+                    <button type="button" id="submit" onclick="submit()" class="login">
+                        Login
+                    </button>
+                </div>
+            </div>
+            <!--
+            <div class="register content">
+            <div class="head">
+                <h1>
+                    Bitte registriere dich ein.
+                </h1>
+            </div>
+            <p>Name:</p><input type="text" name="Name" id="name" placeholder="Name">
+            <p>Passwort:</p><input type="password" name="Passwort" placeholder="Passwort">
+            <p>Passwort bestätigen:</p><input type="password" name="Passwort" placeholder="Passwort">
+            <div class="buttons">
+                <button type="submit" name="submit" class="login" onclick="submit()">Login</button>
+            </div>
+        </div>
+        --></div>
+    </body>
+</html>

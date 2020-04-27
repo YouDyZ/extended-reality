@@ -1,0 +1,88 @@
+/*
+  Body nicht klickbar
+*/
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: attr(data-unselectable);
+}
+
+#speedo {
+  visibility: hidden;
+  width:300px;
+  height: 150px;
+  position: fixed;
+  bottom:0%;
+  right:0%;
+  background: rgba(30, 1, 134,0.5);
+  /*border:5px solid rgba(0,0,0,1.0);*/
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+div.speed_wrapper {
+  float: right;
+  overflow: hidden;
+  margin: 2em 0 0 0;
+}
+
+#speed {
+  font-size:5.0em;
+  color:rgba(255,255,255,1.0);
+  float:right;
+  width:150px;
+  height:auto;
+  display:block;
+  margin:20px 10px 0 5px;; 
+  padding: 0 5px;
+}
+
+div.speed_wrapper p.kmh {
+  position: relative;
+  top:3.5em;
+  right: 0px;
+  float:right;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  color:rgba(255,255,255,1.0);
+}
+
+div.wrapper_rpm {
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  /*border:5px solid rgba(0,0,0,1.0);*/
+  float:right;
+  margin: 0 15px;
+  height: 130px;
+  width:20px;
+}
+
+#gear {
+  font-size:30px;
+  text-align: center;
+  color:rgba(255,255,255,1.0);
+  position:relative;
+  top:-1em;
+  right:0em;
+  height:30px;
+}
+
+.rpm_area {
+  display: block;
+  border:2px solid rgba(0,0,0,1.0);
+  height:100px;
+  position: relative;
+  top:-3.5em;
+  left:0em;
+}
+
+#rpm {
+  font-size:25px;
+  color:rgba(255,255,255,1.0);
+  background: black;
+  height: 0%;
+  display: block;
+  overflow: hidden;
+}
+

@@ -1,0 +1,19 @@
+{
+  "name": "altv-beta",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "altv-server.exe"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.8.11"
+  },
+  "devDependencies": {
+    "@altv/types": "^1.0.19"
+  },
+  "description": ""
+}

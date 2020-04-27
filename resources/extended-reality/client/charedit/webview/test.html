@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            Chareditor
+        </title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="./script.js"></script>
+        <script src="https://kit.fontawesome.com/8cda8c20d4.js" crossorigin="anonymous"></script>
+    </head>
+    <body id="body" class="">
+        <div class="wrapper">
+            <input id="rotation" type="range" value="0" min="-180" max="180" />
+            <input id="camzoom" type="range" value="50" min="10" max="90" />
+            <input id="camheight" type="range" value="0" min="-90" max="80" />
+        </div>
+        <div class="side">
+            <div class="menu">
+                <li class="item" id="informations">
+                    <a href="#informations" class="btn">Infos</a>
+                    <div class="smenu">
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Vorname</h1>
+                                </div>
+                                <input type="text" id="forname" placeholder="Vorname" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Nachname</h1>
+                                </div>
+                                <input type="text" id="lastname" placeholder="Nachname" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Größe</h1>
+                                </div>
+                                <input id="playerheight" type="number" min="160" max="190" placeholder="in cm" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Geburtstag</h1>
+                                </div>
+                                <input id="dateOfBirth" type="date" required pattern="\d{4}-\d{2}-\d{2}" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item" class="gender" id="gender">
+                    <a href="#gender" class="btn">Geschlecht</a>
+                    <div class="smenu">
+                        <div class="component component-head">
+                            <label for="male"
+                                ><input type="radio" id="male" name="gender" value="male" />
+                                <i class="fas fa-mars"></i>
+                            </label>
+
+                            <label for="female"><input type="radio" id="female" name="gender" value="female" /><i class="fas fa-venus"> </i></label>
+                        </div>
+                    </div>
+                </li>
+                <li class="item" id="parents">
+                    <a href="#parents" class="btn">Eltern</a>
+                    <div class="smenu">
+                        <div class="component component-first">
+                            <div class="head">
+                                <h1>Form</h1>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Vater</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="shapefatherprev" onclick="shapefatherprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="shapefather" />
+                                        <button id="shapefathernext" onclick="shapefathernext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="head head-margin-botton">
+                                <h1>Mutter</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="shapemotherprev" onclick="shapemotherprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="shapemother" />
+                                        <button id="shapemothernext" onclick="shapemothernext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Mix</h1>
+                                </div>
+                                <input id="shapemix" type="range" value="50" min="0" max="100" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Hautfarbe</h1>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Vater</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="skinfatherprev" onclick="skinfatherprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="skinfather" />
+                                        <button id="skinfathernext" onclick="skinfathernext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="head head-margin-botton">
+                                <h1>Mutter</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="skinmotherprev" onclick="skinmotherprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="skinmother" />
+                                        <button id="skinmothernext" onclick="skinmothernext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Mix</h1>
+                                </div>
+                                <input id="skinmix" type="range" value="50" min="0" max="100" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item" id="eyescolormenu">
+                    <a href="#eyescolormenu" class="btn">Behaarung</a>
+                    <div class="smenu">
+                        <div class="component">
+                            <div class="head">
+                                <h1>Haare</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="hairdrawprev" onclick="hairdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="hairdraw" />
+                                        <button id="hairdrawnext" onclick="hairdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="head">
+                                <h1>Farbe</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="primaryColorprev" onclick="primaryColorprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="primaryColor" />
+                                        <button id="primaryColornext" onclick="primaryColornext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="highlightColorprev" onclick="highlightColorprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="highlightColor" />
+                                        <button id="highlightColornext" onclick="highlightColornext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Bart</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="facialHairprev" onclick="facialHairprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="facialHair" />
+                                        <button id="facialHairnext" onclick="facialHairnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="facialHairOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="head">
+                                <h1>Farbe</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="beardprimaryprev" onclick="beardprimaryprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="beardprimary" />
+                                        <button id="beardprimarynext" onclick="beardprimarynext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="beardhighlightprev" onclick="beardhighlightprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="beardhighlight" />
+                                        <button id="beardhighlightnext" onclick="beardhighlightnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Augenbrauen</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="eyebrowsprev" onclick="eyebrowsprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="eyebrows" />
+                                        <button id="eyebrowsnext" onclick="eyebrowsnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <input id="eyebrowsOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="head">
+                                <h1>Farbe</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="eyebrowsprimaryprev" onclick="eyebrowsprimaryprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="eyebrowsprimary" />
+                                        <button id="eyebrowsprimarynext" onclick="eyebrowsprimarynext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="eyebrowshighlightprev" onclick="eyebrowshighlightprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="eyebrowshighlight" />
+                                        <button id="eyebrowshighlightnext" onclick="eyebrowshighlightnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Brustbehaarung</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="chestHairprev" onclick="chestHairprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="chestHair" />
+                                        <button id="chestHairnext" onclick="chestHairnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="chestHairOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="head">
+                                <h1>Farbe</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="chesthairprimaryprev" onclick="chesthairprimaryprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="chesthairprimary" />
+                                        <button id="chesthairprimarynext" onclick="chesthairprimarynext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="chesthairhighlightprev" onclick="chesthairhighlightprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="chesthairhighlight" />
+                                        <button id="chesthairhighlightnext" onclick="chesthairhighlightnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item" id="detail">
+                    <a href="#detail" class="btn">Feinheiten</a>
+                    <div class="smenu">
+                        <div class="component component-first">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Nasenbreite</h1>
+                                </div>
+                                <input id="nosewidth" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Nasenhöhe</h1>
+                                </div>
+                                <input id="noseheight" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Nasenlänge</h1>
+                                </div>
+                                <input id="noselength" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Nasenrücken</h1>
+                                </div>
+                                <input id="noseback" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Nasenspitze</h1>
+                                </div>
+                                <input id="nosetip" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Nasenbrückenwelle</h1>
+                                </div>
+                                <input id="nosebridge" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Brauenhöhe</h1>
+                                </div>
+                                <input id="browheight" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Brauenweite</h1>
+                                </div>
+                                <input id="browwidth" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component cheekbones">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Wangenknochenhöhe</h1>
+                                </div>
+                                <input id="cheekbonesheight" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component cheekbones">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Wangenknochenbreite</h1>
+                                </div>
+                                <input id="cheekboneswidth" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Wangenbreite</h1>
+                                </div>
+                                <input id="cheekwidth" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Augenlied</h1>
+                                </div>
+                                <input id="eyelid" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Lippen</h1>
+                                </div>
+                                <input id="lips" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Kieferbreite</h1>
+                                </div>
+                                <input id="jawwidth" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Kieferhöhe</h1>
+                                </div>
+                                <input id="jawheight" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Kinnlänge</h1>
+                                </div>
+                                <input id="chinlength" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Kinnposition</h1>
+                                </div>
+                                <input id="chinpos" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Kinnbreite</h1>
+                                </div>
+                                <input id="chinwidth" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Kinnform</h1>
+                                </div>
+                                <input id="chinshape" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="itemoption">
+                                <div class="head">
+                                    <h1>Nackenbreite</h1>
+                                </div>
+                                <input id="neckwidth" type="range" value="100" min="0" max="200" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item" id="headmenue">
+                    <a href="#headmenue" class="btn">Gesicht</a>
+                    <div class="smenu">
+                        <div class="component component-first">
+                            <div class="head">
+                                <h1>Augenfarbe</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="eyeColorprev" onclick="eyeColorprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="eyeColor" />
+                                        <button id="eyeColornext" onclick="eyeColornext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="component">
+                            <div class="head">
+                                <h1>Makeup</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="makeupprev" onclick="makeupprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="makeup" />
+                                        <button id="makeupnext" onclick="makeupnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="makeupOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Rouge</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="blushprev" onclick="blushprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="blush" />
+                                        <button id="blushnext" onclick="blushnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="blushOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="head">
+                                <h1>Farbe</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="blushprimaryprev" onclick="blushprimaryprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="blushprimary" />
+                                        <button id="blushprimarynext" onclick="blushprimarynext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="blushhighlightprev" onclick="blushhighlightprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="blushhighlight" />
+                                        <button id="blushhighlightnext" onclick="blushhighlightnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Lippenstift</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="lipstickprev" onclick="lipstickprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="lipstick" />
+                                        <button id="lipsticknext" onclick="lipsticknext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="lipstickOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="head">
+                                <h1>Farbe</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="lipstickprimaryprev" onclick="lipstickprimaryprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="lipstickprimary" />
+                                        <button id="lipstickprimarynext" onclick="lipstickprimarynext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="lipstickhighlightprev" onclick="lipstickhighlightprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="lipstickhighlight" />
+                                        <button id="lipstickhighlightnext" onclick="lipstickhighlightnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Pickel</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="blemishesprev" onclick="blemishesprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="blemishes" />
+                                        <button id="blemishesnext" onclick="blemishesnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="blemishesOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="component">
+                            <div class="head">
+                                <h1>Alterung</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="ageingprev" onclick="ageingprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="ageing" />
+                                        <button id="ageingnext" onclick="ageingnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="ageingOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="component">
+                            <div class="head">
+                                <h1>Rötung</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="complexionprev" onclick="complexionprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="complexion" />
+                                        <button id="complexionnext" onclick="complexionnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="complexionOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Sonnenschäden</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="sunDamageprev" onclick="sunDamageprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="sunDamage" />
+                                        <button id="sunDamagenext" onclick="sunDamagenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="sunDamageOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="component">
+                            <div class="head">
+                                <h1>Sommersprossen</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="fracklesprev" onclick="fracklesprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="frackles" />
+                                        <button id="fracklesnext" onclick="fracklesnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="fracklesOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="component">
+                            <div class="head">
+                                <h1>Körper</h1>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Leberflecken</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="bodyBlemishesprev" onclick="bodyBlemishesprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="bodyBlemishes" />
+                                        <button id="bodyBlemishesnext" onclick="bodyBlemishesnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="bodyBlemishesOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="head">
+                                <h1>Pickel</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="addbodyBlemishesprev" onclick="addbodyBlemishesprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="addbodyBlemishes" />
+                                        <button id="addbodyBlemishesnext" onclick="addbodyBlemishesnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <input id="addbodyBlemishesOpacity" type="range" value="0" min="0" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item" id="kleidung">
+                    <a href="#kleidung" class="btn">Kleidung</a>
+                    <div class="smenu">
+                        <div class="component">
+                            <div class="head">
+                                <h1>Untershirt</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="undershirtdrawprev" onclick="undershirtdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="undershirtdraw" />
+                                        <button id="undershirtdrawnext" onclick="undershirtdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="undershirttextureprev" onclick="undershirttextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="undershirttexture" />
+                                        <button id="undershirttexturenext" onclick="undershirttexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component component-last">
+                            <div class="head">
+                                <h1>Oberteil</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="topsdrawprev" onclick="topsdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="topsdraw" />
+                                        <button id="topsdrawnext" onclick="topsdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="topstextureprev" onclick="topstextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="topstexture" />
+                                        <button id="topstexturenext" onclick="topstexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Hose</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="legsdrawprev" onclick="legsdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="legsdraw" />
+                                        <button id="legsdrawnext" onclick="legsdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="legstextureprev" onclick="legstextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="legstexture" />
+                                        <button id="legstexturenext" onclick="legstexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Schuhe</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="shoesdrawprev" onclick="shoesdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="shoesdraw" />
+                                        <button id="shoesdrawnext" onclick="shoesdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="shoestextureprev" onclick="shoestextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="shoestexture" />
+                                        <button id="shoestexturenext" onclick="shoestexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Aufdrücke</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="decalsdrawprev" onclick="decalsdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="decalsdraw" />
+                                        <button id="decalsdrawnext" onclick="decalsdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="decalstextureprev" onclick="decalstextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="decalstexture" />
+                                        <button id="decalstexturenext" onclick="decalstexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--
+                <li class="item" id="colormenu">
+                    <a href="#colormenu" class="btn">Farbe</a>
+                    <div class="smenu"></div>
+                </li>
+
+                <li class="item" id="morecolorsmenu">
+                    <a href="#morecolorsmenu" class="btn">mehr Farben</a>
+                    <div class="smenu"></div>
+                </li>
+-->
+                <li class="item" id="accessoriesmenu">
+                    <a href="#accessoriesmenu" class="btn">Accessories</a>
+                    <div class="smenu">
+                        <div class="component component-first">
+                            <div class="head">
+                                <h1>Maske</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="maskdrawprev" onclick="maskdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="maskdraw" />
+                                        <button id="maskdrawnext" onclick="maskdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="masktextureprev" onclick="masktextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="masktexture" />
+                                        <button id="masktexturenext" onclick="masktexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Hals</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="accessoriesdrawprev" onclick="accessoriesdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="accessoriesdraw" />
+                                        <button id="accessoriesdrawnext" onclick="accessoriesdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="accessoriestextureprev" onclick="accessoriestextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="accessoriestexture" />
+                                        <button id="accessoriestexturenext" onclick="accessoriestexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component component-first">
+                            <div class="head">
+                                <h1>Hüte</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="hatsdrawprev" onclick="hatsdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="hatsdraw" />
+                                        <button id="hatsdrawnext" onclick="hatsdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="hatstextureprev" onclick="hatstextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="hatstexture" />
+                                        <button id="hatstexturenext" onclick="hatstexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Brillen</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="glassesdrawprev" onclick="glassesdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="glassesdraw" />
+                                        <button id="glassesdrawnext" onclick="glassesdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="glassestextureprev" onclick="glassestextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="glassestexture" />
+                                        <button id="glassestexturenext" onclick="glassestexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Ohrring</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="earsdrawprev" onclick="earsdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="earsdraw" />
+                                        <button id="earsdrawnext" onclick="earsdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="earstextureprev" onclick="earstextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="earstexture" />
+                                        <button id="earstexturenext" onclick="earstexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Uhren</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="watchesdrawprev" onclick="watchesdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="watchesdraw" />
+                                        <button id="watchesdrawnext" onclick="watchesdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="watchestextureprev" onclick="watchestextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="watchestexture" />
+                                        <button id="watchestexturenext" onclick="watchestexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <div class="head">
+                                <h1>Armband</h1>
+                            </div>
+                            <div class="menuepoint">
+                                <div id="item" class="item">
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="braceletsdrawprev" onclick="braceletsdrawprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="braceletsdraw" />
+                                        <button id="braceletsdrawnext" onclick="braceletsdrawnext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="itemoption">
+                                        <button class="unselectable" id="braceletstextureprev" onclick="braceletstextureprev()">
+                                            <i class="fas fa-angle-left"></i>
+                                        </button>
+                                        <input type="number" value="1" id="braceletstexture" />
+                                        <button id="braceletstexturenext" onclick="braceletstexturenext()">
+                                            <i class="fas fa-angle-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item" id="finish">
+                    <a href="#finish" class="btn">Fertig</a>
+                    <div class="smenu">
+                        <div class="component component-head">
+                            <h1>Errors</h1>
+                            <p id="errormsg">Nach Abschicken werden hier Feher angezeigt</p>
+                        </div>
+                        <div class="component">
+                            <h1 onclick="finish()">Abschicken</h1>
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </body>
+</html>

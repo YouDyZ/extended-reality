@@ -1,0 +1,44 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+*:focus {
+  outline: 0;
+}
+
+body {
+  overflow:hidden;
+  font-family: 'Wallpoet', cursive;
+  font-size: 14px;
+}
+
+* {
+  font-family: 'Wallpoet', cursive;
+}
+
+.fontLoad {
+  font-family: 'Wallpoet', cursive;
+  font-size: 0;
+  position: absolute;
+  visibility: hidden;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+#canvas {
+  bottom: 3.3%;
+  right: 7%;
+  position: absolute;
+  height: 400px;
+  overflow: hidden;
+}

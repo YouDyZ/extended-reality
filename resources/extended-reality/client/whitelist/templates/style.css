@@ -1,0 +1,73 @@
+/* #### css basics #### */
+
+* {
+    padding: 0;
+    margin: 0;
+    line-height: 1.3em;
+    border: 0;
+    text-align: left;
+}
+html {
+    overflow: auto;
+    overflow-y: scroll;
+    height: 100%;
+}
+table,
+tbody,
+th,
+tr,
+td {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+}
+a,
+a:hover,
+a:active {
+    outline: none;
+    text-decoration: none;
+}
+main {
+    display: block;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.8);
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    font-size: 10px;
+}
+
+/* #### playground #### */
+
+div.wrapper-all {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.ecopetit.cat/iconpics/f/13/133302/gta-5-city-wallpaper.jpg');
+    background-position: center;
+    background-attachment: fixed;
+}
+
+div.wrapper-content {
+    display: block;
+    height: auto;
+    width: auto;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
+
+h1 {
+    font-size: 5em;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+p {
+    font-size: 2.5em;
+}
