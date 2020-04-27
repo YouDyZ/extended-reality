@@ -1,17 +1,17 @@
-import game from 'natives';
-import * as alt from 'alt';
-import * as native from 'natives';
-import * as chat from 'chat';
+import game from "natives";
+import * as alt from "alt-client";
+import * as native from "natives";
+import * as chat from "chat";
 //import { compare } from 'bcryptjs';
 //import * as player from 'player-sound';
 
 var markerPosition = [];
 
-alt.onServer('onConnection', (player) => {
-    alt.log('Du bist Verbunden!');
+alt.onServer("onConnection", (player) => {
+    alt.log("Du bist Verbunden!");
     //alt.emitServer('spawnPlayer');
     //alt.emitServer('SocialClub', (alt.Player.local.scriptID, native.scGetNickname()));
-    alt.emit('connectionComplete');
+    alt.emit("connectionComplete");
     // });
 
     // alt.on('connectionComplete', () => {
@@ -226,7 +226,7 @@ alt.requestIpl('ex_dt1_11_office_02b');*/
 
 //markers
 
-alt.onServer('createMarker', (x, y, z) => {
+alt.onServer("createMarker", (x, y, z) => {
     markerPosition.push({
         x: x,
         y: y,
@@ -234,30 +234,54 @@ alt.onServer('createMarker', (x, y, z) => {
     });
 });
 
-alt.on('update', () => {
+alt.on("update", () => {
     //native.enableCrosshairThisFrame();
     if (markerPosition.length >= 1) {
         for (var i = 0; i < markerPosition.length; i++) {
-            game.drawMarker(1, markerPosition[i].x, markerPosition[i].y, markerPosition[i].z, 0, 0, 0, 0, 0, 0, 2, 2, 2, 255, 255, 255, 50, false, false, 2, false, undefined, undefined);
+            game.drawMarker(
+                1,
+                markerPosition[i].x,
+                markerPosition[i].y,
+                markerPosition[i].z,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2,
+                2,
+                2,
+                255,
+                255,
+                255,
+                50,
+                false,
+                false,
+                2,
+                false,
+                undefined,
+                undefined
+            );
         }
     }
 });
 
-alt.on('keydown', (key) => {
-    if (key == 'E'.charCodeAt(0)) {
-        alt.emitServer('pressE');
+alt.on("keydown", (key) => {
+    if (key == "E".charCodeAt(0)) {
+        alt.emitServer("pressE");
         return;
     }
 });
 
-alt.on('keyup', (key) => {
-    if (key == 'E'.charCodeAt(0)) {
-        alt.emitServer('pressedE');
+alt.on("keyup", (key) => {
+    if (key == "E".charCodeAt(0)) {
+        alt.emitServer("pressedE");
         return;
     }
 });
 
-alt.onServer('deathFade', () => {
+alt.onServer("deathFade", () => {
     native.doScreenFadeOut(7000);
     alt.setTimeout(() => {
         native.doScreenFadeIn(7000);
@@ -268,31 +292,49 @@ alt.onServer('deathFade', () => {
     }, 30000);
 });
 
-alt.onServer('flash', () => {
+alt.onServer("flash", () => {
     native.doScreenFadeOut(1);
     alt.setTimeout(() => {
         native.doScreenFadeIn(1000);
     }, 4000);
 });
 
-alt.onServer('clear', () => {
+alt.onServer("clear", () => {
     native.doScreenFadeIn(1);
 });
 
 function playParticleFX(dict, name, duration, scale, x = 0, y = 0, z = 0) {
     const particles = [];
-    if (name.includes('scr')) return; // scr particles break things easily.
+    if (name.includes("scr")) return; // scr particles break things easily.
     const interval = alt.setInterval(() => {
         native.requestPtfxAsset(dict);
         native.useParticleFxAsset(dict);
-        const particle = native.startParticleFxLoopedOnEntity(name, alt.Player.local.scriptID, x, y, z, 0, 0, 0, scale, false, false, false);
+        const particle = native.startParticleFxLoopedOnEntity(
+            name,
+            alt.Player.local.scriptID,
+            x,
+            y,
+            z,
+            0,
+            0,
+            0,
+            scale,
+            false,
+            false,
+            false
+        );
         particles.push(particle);
     }, 0);
     alt.log(`particle.mjs ${interval}`);
 
     alt.setTimeout(() => {
         alt.clearInterval(interval);
-        native.stopFireInRange(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z, 10);
+        native.stopFireInRange(
+            alt.Player.local.pos.x,
+            alt.Player.local.pos.y,
+            alt.Player.local.pos.z,
+            10
+        );
 
         alt.setTimeout(() => {
             particles.forEach((particle) => {
@@ -306,35 +348,57 @@ function playParticleFX(dict, name, duration, scale, x = 0, y = 0, z = 0) {
     }, duration);
 }
 
-alt.onServer('reset', () => {
-    native.setPedHeadBlendData(alt.Player.local.scriptID, 0, 0, 0, 0, 0, 0, 0, 0, 0, false);
+alt.onServer("reset", () => {
+    native.setPedHeadBlendData(
+        alt.Player.local.scriptID,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    );
 });
 
-alt.onServer('tryParticle', (dict, name, duration, scale, x, y, z) => {
+alt.onServer("tryParticle", (dict, name, duration, scale, x, y, z) => {
     playParticleFX(dict, name, duration, scale, x, y, z);
 });
 
-alt.onServer('godOn', () => {
+alt.onServer("godOn", () => {
     native.setEntityInvincible(alt.Player.local.scriptID, true);
-    alt.log('Du bist nun im Godmode');
+    alt.log("Du bist nun im Godmode");
 });
 
-alt.onServer('godOff', () => {
+alt.onServer("godOff", () => {
     native.setEntityInvincible(alt.Player.local.scriptID, false);
-    alt.log('Du bist nicht mehr im Godmode');
+    alt.log("Du bist nicht mehr im Godmode");
 });
 
-alt.onServer('hairColor', () => {
+alt.onServer("hairColor", () => {
     native.setPedHairColor(alt.Player.local.scriptID, color, highlight);
 });
 
-alt.onServer('changeHair', (hair, primaryColor, secondaryColor) => {
+alt.onServer("changeHair", (hair, primaryColor, secondaryColor) => {
     native.setPedComponentVariation(alt.Player.local.scriptID, 2, hair, 1, 1);
-    native.setPedHairColor(alt.Player.local.scriptID, primaryColor, secondaryColor);
+    native.setPedHairColor(
+        alt.Player.local.scriptID,
+        primaryColor,
+        secondaryColor
+    );
 });
 
-alt.onServer('change', (part, number, texture) => {
-    native.setPedComponentVariation(alt.Player.local.scriptID, part, number, texture, 1);
+alt.onServer("change", (part, number, texture) => {
+    native.setPedComponentVariation(
+        alt.Player.local.scriptID,
+        part,
+        number,
+        texture,
+        1
+    );
 });
 
 // 2 -2 ist okay
@@ -348,19 +412,28 @@ alt.onServer('change', (part, number, texture) => {
     alt.log();
 });*/
 
-alt.onServer('prot', (posx, posy, posz, rotx, roty, rotz) => {
-    alt.log('Pos: x: ' + posx + ', y: ' + posy + ', z: ' + posz);
-    alt.log('Rot: x: ' + rotx + ', y: ' + roty + ', z: ' + rotz);
+alt.onServer("prot", (posx, posy, posz, rotx, roty, rotz) => {
+    alt.log("Pos: x: " + posx + ", y: " + posy + ", z: " + posz);
+    alt.log("Rot: x: " + rotx + ", y: " + roty + ", z: " + rotz);
 });
 
-alt.onServer('teleportToWaypoint', (player) => {
+alt.onServer("teleportToWaypoint", (player) => {
     if (!native.isWaypointActive()) return;
 
     let wp = native.getFirstBlipInfoId(8);
     let coords = native.getBlipInfoIdCoord(wp);
     // Will fall through map until eventually lands on ground.
     //native.doScreenFadeOut(250);
-    native.setEntityCoords(alt.Player.local.scriptID, coords.x, coords.y, coords.z, 1, 0, 0, 1);
+    native.setEntityCoords(
+        alt.Player.local.scriptID,
+        coords.x,
+        coords.y,
+        coords.z,
+        1,
+        0,
+        0,
+        1
+    );
     /*alt.setTimeout(function() {
         native.doScreenFadeIn(250);
     }, 2000);*/
@@ -371,23 +444,27 @@ alt.onServer('teleportToWaypoint', (player) => {
     alt.log(`${VehClass}`);
 });*/
 
-alt.onServer('getInt', (x, y, z) => {
+alt.onServer("getInt", (x, y, z) => {
     alt.log(`${native.getInteriorAtCoords(x, y, z)}`);
 });
 
-alt.onServer('drunk', () => {
+alt.onServer("drunk", () => {
     native.setPedIsDrunk(alt.Player.local.scriptID, true);
 });
 
-alt.onServer('vehicle:SetInto', (vehicle) => {
+alt.onServer("vehicle:SetInto", (vehicle) => {
     alt.setTimeout(() => {
-        native.setPedIntoVehicle(alt.Player.local.scriptID, vehicle.scriptID, -1);
+        native.setPedIntoVehicle(
+            alt.Player.local.scriptID,
+            vehicle.scriptID,
+            -1
+        );
     }, 100);
 });
 /*
 //WETTERSYSTEM
 */
-alt.onServer('weather:update', (wnow, wthen) => {
+alt.onServer("weather:update", (wnow, wthen) => {
     let transitionFactor = 0.0;
 
     let lastInterval = alt.setInterval(() => {
@@ -397,30 +474,34 @@ alt.onServer('weather:update', (wnow, wthen) => {
             alt.clearInterval(lastInterval);
             return;
         }
-        native.setWeatherTypeTransition(native.getHashKey(wnow), native.getHashKey(wthen), transitionFactor);
+        native.setWeatherTypeTransition(
+            native.getHashKey(wnow),
+            native.getHashKey(wthen),
+            transitionFactor
+        );
     }, 50);
 });
 
-alt.onServer('time:update', (stunde, minute, sekunde) => {
+alt.onServer("time:update", (stunde, minute, sekunde) => {
     native.setClockTime(stunde, minute, sekunde);
 });
 
-alt.onServer('player:sync', (h, m, s, weather) => {
+alt.onServer("player:sync", (h, m, s, weather) => {
     native.setClockTime(h, m, s);
     native.setWeatherTypeNow(weather);
 });
 
-alt.onServer('test:ping', (start) => {
+alt.onServer("test:ping", (start) => {
     let finish = parseInt(Date.now());
     start = parseFloat(start);
     let ping = finish - start;
 
-    alt.emitServer('test:ping_finish', alt.Player.local.scriptID, ping);
+    alt.emitServer("test:ping_finish", alt.Player.local.scriptID, ping);
 });
 
-let sounds = new alt.WebView('resources/firstres/client/index.html');
+let sounds = new alt.WebView("resources/firstres/client/index.html");
 
-alt.onServer('noose:sync', (status) => {
+alt.onServer("noose:sync", (status) => {
     if (status == true) {
         native.setArtificialLightsState(true);
     }
@@ -430,43 +511,52 @@ alt.onServer('noose:sync', (status) => {
     //let hud = new alt.WebView("index.html");
 });
 
-alt.onServer('noose:start', () => {
+alt.onServer("noose:start", () => {
     alt.setTimeout(() => {
         native.setArtificialLightsState(true);
     }, 14000);
 
     alt.setTimeout(() => {
-        sounds.emit('play:noose_siren');
+        sounds.emit("play:noose_siren");
     }, 3500);
-    sounds.emit('play:noose_start');
+    sounds.emit("play:noose_start");
 });
 
-alt.onServer('noose:stop', () => {
+alt.onServer("noose:stop", () => {
     native.setArtificialLightsState(false);
 });
 
-alt.onServer('nightvision', (status) => {
+alt.onServer("nightvision", (status) => {
     native.setNightvision(status);
 });
 
 let targetBlip;
-let noosefinished;
 
-alt.onServer('noose:targetinit', () => {
-    noosefinished = false;
-});
-
-alt.onServer('noose:updateTarget', (targetx, targety, targetz, name) => {
-    if (targetBlip != undefined) {
+alt.onServer("noose:targetinit", () => {
+    if (targetBlip) {
         targetBlip.destroy();
     }
+    targetBlip = new alt.PointBlip(x, y, z);
+    targetBlip.shortRange = true;
+    targetBlip.sprite = 303;
+    targetBlip.color = 2;
+    targetBlip.name = name;
+    native.setBlipCoords(targetBlip, targetx, targety, targetz);
+    native.setBlipRoute(targetBlip, true);
+});
 
+alt.onServer("noose:updateTarget", (targetx, targety, targetz, name) => {
+    native.setBlipCoords(targetBlip, targetx, targety, targetz);
+    //native.setBlipRoute(targetBlip, true);
+    //TODO check if needed
+
+    /*Replaced
+    
     let x = targetx;
     let y = targety;
     let z = targetz;
     alt.log(`x: ${x}, y: ${y}, z: ${z}`);
-    name = name + '';
-
+    name = name + "";
     targetBlip = new alt.PointBlip(x, y, z);
     targetBlip.shortRange = true;
     targetBlip.sprite = 303;
@@ -475,20 +565,29 @@ alt.onServer('noose:updateTarget', (targetx, targety, targetz, name) => {
     native.setNewWaypoint(x, y);
     if (noosefinished == true) {
         targetBlip.destroy();
-    }
+    }*/
 });
 
-alt.onServer('noose:finished', () => {
+alt.onServer("noose:finished", () => {
     if (targetBlip == undefined) {
         return;
     }
-
-    noosefinished = true;
+    targetBlip.destroy();
+    targetBlip = null;
 });
 
 alt.everyTick(() => {
     let weapon = native.getSelectedPedWeapon(alt.Player.local.scriptID);
-    if (weapon === 100416529 || weapon === 3342088282 || weapon === 177293209 || weapon === 20599196 || weapon === 298236145 || weapon === 3056410471 || weapon === 1672152130 || weapon === 1119849093) {
+    if (
+        weapon === 100416529 ||
+        weapon === 3342088282 ||
+        weapon === 177293209 ||
+        weapon === 20599196 ||
+        weapon === 298236145 ||
+        weapon === 3056410471 ||
+        weapon === 1672152130 ||
+        weapon === 1119849093
+    ) {
         return;
     } else {
         native.hideHudComponentThisFrame(14);
@@ -499,30 +598,48 @@ alt.everyTick(() => {
     native.hideHudComponentThisFrame(2);
 });
 
-alt.onServer('ped:random', () => {
+alt.onServer("ped:random", () => {
     native.setPedRandomComponentVariation(alt.Player.local.scriptID, 0);
 });
 
-alt.onServer('ped:default', () => {
-    native.setPedHeadBlendData(alt.Player.local.scriptID, 0, 0, 0, 0, 0, 0, 0, 0, 0, false);
+alt.onServer("ped:default", () => {
+    native.setPedHeadBlendData(
+        alt.Player.local.scriptID,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    );
 });
 
-alt.onServer('ped:set', (component, drawable, texture, palette) => {
-    native.setPedComponentVariation(alt.Player.local.scriptID, component, drawable, texture, palette);
+alt.onServer("ped:set", (component, drawable, texture, palette) => {
+    native.setPedComponentVariation(
+        alt.Player.local.scriptID,
+        component,
+        drawable,
+        texture,
+        palette
+    );
 });
 
-alt.onServer('veh:log', (x, y, z, rx, ry, rz) => {
+alt.onServer("veh:log", (x, y, z, rx, ry, rz) => {
     alt.log(`x: ${x}, y: ${y}, z: ${z}, rotx: ${rx}, roty: ${ry} rotz: ${rz}`);
 });
 
 let running;
-alt.onServer('running:start', () => {
+alt.onServer("running:start", () => {
     running = alt.setInterval(() => {
         native.restorePlayerStamina(alt.Player.local.scriptID, 1);
     }, 1);
 });
 
-alt.onServer('running:start', () => {
+alt.onServer("running:start", () => {
     alt.clearInterval(running);
 });
 
@@ -555,23 +672,47 @@ alt.onServer('running:start', () => {
 //     native.doorControl(hashKey, posX, posY, posZ, state, rotX, rotY, rotZ);
 // });
 let dispalyWeapon;
-alt.onServer('attach', (hash, px, py, pz, rx, ry, rz) => {
-    alt.log('try to attatch');
+alt.onServer("attach", (hash, px, py, pz, rx, ry, rz) => {
+    alt.log("try to attatch");
     if (dispalyWeapon) {
         native.deleteEntity(dispalyWeapon);
     }
     ///att -739394447 0.1 -0.15 0.35 0 90 0 (Im Rücken)
 
-    dispalyWeapon = native.createObjectNoOffset(hash, alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z, false, true, false);
-    native.attachEntityToEntity(dispalyWeapon, alt.Player.local.scriptID, 0, px, py, pz, rx, ry, rz, false, false, false, true, 0, true);
+    dispalyWeapon = native.createObjectNoOffset(
+        hash,
+        alt.Player.local.pos.x,
+        alt.Player.local.pos.y,
+        alt.Player.local.pos.z,
+        false,
+        true,
+        false
+    );
+    native.attachEntityToEntity(
+        dispalyWeapon,
+        alt.Player.local.scriptID,
+        0,
+        px,
+        py,
+        pz,
+        rx,
+        ry,
+        rz,
+        false,
+        false,
+        false,
+        true,
+        0,
+        true
+    );
     //native.attachEntityToEntity(entity1_number, entity2_number, boneIndex_number, xPos_number, yPos_number, zPos_number, xRot_number, yRot_number, zRot_number, p9_boolean, useSoftPinning_boolean, collision_boolean, isPed_boolean, vertexIndex_number, fixedRot_boolean);
 });
 
-alt.onServer('isinWater', () => {
+alt.onServer("isinWater", () => {
     alt.log(native.isEntityInWater(alt.Player.local.scriptID));
 });
 
-alt.onServer('tune:veh', (veh, type, index) => {
+alt.onServer("tune:veh", (veh, type, index) => {
     native.setVehicleMod(veh, type, index, false);
     alt.log(native.getVehicleMod(veh.scriptID, type));
 });
