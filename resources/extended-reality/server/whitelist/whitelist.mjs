@@ -1,7 +1,23 @@
-import * as alt from "alt";
-import chat from "chat";
-import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
+import * as alt from 'alt';
+import chat from 'chat';
+import mysql from 'mysql';
+import bcrypt from 'bcryptjs';
+import mongoose from 'mongoose';
+
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '7z4G$zJpYYRs',
+    database: 'roleplay',
+});
+
+db.connect((err) => {
+    if (err) {
+        throw err;
+    } else {
+        console.log('\x1b[32m', `CONNECTTED MYSQL!`);
+    }
+});
 
 const salt = 10;
 let connection;
@@ -35,13 +51,13 @@ const startall = function (player, rank, playerchars, dbid, dbmaxchars) {
         maxchars = dbmaxchars;
     }
 
-    player.setMeta("dbID", dbid);
-    alt.emit("charselect:start", player, playerchars, maxchars);
-    alt.emit("sync");
+    player.setMeta('dbID', dbid);
+    alt.emit('charselect:start', player, playerchars, maxchars);
+    alt.emit('sync');
 };
 
 mongoose
-    .connect("mongodb://localhost:27017/player", {
+    .connect('mongodb://localhost:27017/player', {
         useUnifiedTopology: true,
         useNewUrlParser: true,
         useCreateIndex: true,
@@ -50,12 +66,12 @@ mongoose
         //console.log(con.connections);
         connection = con;
         console.log(
-            "\x1b[32m",
+            '\x1b[32m',
             `I am connected to the database: §${connection}`
         );
     });
 
-mongoose.set("useFindAndModify", false);
+mongoose.set('useFindAndModify', false);
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -69,31 +85,31 @@ function fnHook(object, name) {
 }
 
 const modelFunctions = [
-    "deleteMany",
-    "deleteOne",
-    "find",
-    "findById",
-    "findByIdAndDelete",
-    "findByIdAndRemove",
-    "findByIdAndRemove",
-    "findByIdAndUpdate",
-    "findByIdAndUpdate",
-    "findOne",
-    "findOneAndDelete",
-    "findOneAndRemove",
-    "findOneAndUpdate",
-    "replaceOne",
-    "updateMany",
-    "updateOne",
-    "save",
+    'deleteMany',
+    'deleteOne',
+    'find',
+    'findById',
+    'findByIdAndDelete',
+    'findByIdAndRemove',
+    'findByIdAndRemove',
+    'findByIdAndUpdate',
+    'findByIdAndUpdate',
+    'findOne',
+    'findOneAndDelete',
+    'findOneAndRemove',
+    'findOneAndUpdate',
+    'replaceOne',
+    'updateMany',
+    'updateOne',
+    'save',
 ];
 
 const prototypeFunctions = [
-    "delete",
-    "deleteOne",
-    "increment",
-    "remove",
-    "save",
+    'delete',
+    'deleteOne',
+    'increment',
+    'remove',
+    'save',
 ];
 
 for (let i = 0; i < modelFunctions.length; i++)
@@ -111,12 +127,12 @@ let PlayerSchema = new mongoose.Schema({
     name: {
         type: String,
         unique: true,
-        required: [true, "Du brauchst einen Namen"],
+        required: [true, 'Du brauchst einen Namen'],
     },
     social: {
         type: String,
         unique: true,
-        required: [true, "Du brauchst eine SocialID"],
+        required: [true, 'Du brauchst eine SocialID'],
     },
     pw: {
         type: String,
@@ -140,13 +156,13 @@ let PlayerSchema = new mongoose.Schema({
     },
     forum: {
         type: String,
-        required: [true, "Du musst dein Forumname angeben."],
-        unique: [true, "Der Name ist bereits Registriert"],
+        required: [true, 'Du musst dein Forumname angeben.'],
+        unique: [true, 'Der Name ist bereits Registriert'],
     },
     teamspeak: {
         type: String,
-        required: [true, "Du brauchst deine TeamspeakID"],
-        unique: [true, "Diese TeamspeakID ist bereits registriert!"],
+        required: [true, 'Du brauchst deine TeamspeakID'],
+        unique: [true, 'Diese TeamspeakID ist bereits registriert!'],
     },
     rank: {
         type: Number,
@@ -173,56 +189,56 @@ let PlayerSchema = new mongoose.Schema({
     let teamspeak = document.getElementById('teamspeak').value;
     let confirm = document.getElementById('confirm').value;
 */
-const PlayersModel = mongoose.model("player", PlayerSchema);
+const PlayersModel = mongoose.model('player', PlayerSchema);
 
-alt.on("playerConnect", (player) => {
-    alt.emitClient(player, "list:socialclub");
-    alt.emitClient(player, "login:cam", 0, 0, 0);
+alt.on('playerConnect', (player) => {
+    alt.emitClient(player, 'list:socialclub');
+    alt.emitClient(player, 'login:cam', 0, 0, 0);
     player.spawn(3426.698974609375, 5174.4130859375, 7.4088134765625, 0);
     player.dimension = Math.floor(Math.random * 1000);
 });
 
-alt.onClient("list:sendSC", (player, SocialID) => {
-    player.setMeta("socialclub", SocialID);
+alt.onClient('list:sendSC', (player, SocialID) => {
+    player.setMeta('socialclub', SocialID);
     PlayersModel.findOne({ social: SocialID }, function (err, res) {
         //console.log(res.pw);
         if (err) console.log(err);
         else if (res == null) {
-            alt.emitClient(player, "login:register");
+            alt.emitClient(player, 'login:register');
         } else if (res.banstate.length != 0) {
             let bandate = Date(res.banstate[1]);
-            alt.emitClient(player, "banned", res.banstate[0], bandate);
+            alt.emitClient(player, 'banned', res.banstate[0], bandate);
             alt.setTimeout(function () {
                 player.kick();
             }, 30000);
-            chat.send(player, "banned");
+            chat.send(player, 'banned');
         } else if (res.pw === undefined && res.teamspeak === undefined) {
-            chat.send(player, "login:register");
-            alt.emitClient(player, "login:register");
-        } else if (res.pw == undefined || res.pw == "") {
-            alt.emitClient(player, "login:newpw");
+            chat.send(player, 'login:register');
+            alt.emitClient(player, 'login:register');
+        } else if (res.pw == undefined || res.pw == '') {
+            alt.emitClient(player, 'login:newpw');
         } else if (res.pw && res.teamspeak) {
-            chat.send(player, "login:open");
-            alt.emitClient(player, "login:open");
+            chat.send(player, 'login:open');
+            alt.emitClient(player, 'login:open');
         } else {
-            chat.send(player, "Error");
+            chat.send(player, 'Error');
         }
     });
 });
 
-chat.registerCmd("removewl", (player, args) => {
-    if (args[0] == "help") {
+chat.registerCmd('removewl', (player, args) => {
+    if (args[0] == 'help') {
         chat.send(
             player,
-            "mit /removewl kannst du Einen Spieler von der Whitelist Entfernen"
+            'mit /removewl kannst du Einen Spieler von der Whitelist Entfernen'
         );
         chat.send(
             player,
-            "Der SocialClubName ist der Name im Social club und muss übereinstimmen!"
+            'Der SocialClubName ist der Name im Social club und muss übereinstimmen!'
         );
         chat.send(
             player,
-            "Den SocialClubname musste du 2x eigeben, damit kein ban versehendlich geschiet!"
+            'Den SocialClubname musste du 2x eigeben, damit kein ban versehendlich geschiet!'
         );
         return;
     }
@@ -246,16 +262,16 @@ chat.registerCmd("removewl", (player, args) => {
     });
 });
 
-chat.registerCmd("addwl", (player, args) => {
-    if (args[0] == "help") {
-        chat.send(player, "mit /addwl kannst du Einen Spieler hinzufügen");
+chat.registerCmd('addwl', (player, args) => {
+    if (args[0] == 'help') {
+        chat.send(player, 'mit /addwl kannst du Einen Spieler hinzufügen');
         chat.send(
             player,
-            "Der Playername ist der Spielername, und ist frei wählbar, darf sich allerdings nicht doppeln"
+            'Der Playername ist der Spielername, und ist frei wählbar, darf sich allerdings nicht doppeln'
         );
         chat.send(
             player,
-            "Der SocialClubName ist der Name im Social club und muss übereinstimmen! Auch hier darf er sich nicht doppeln!"
+            'Der SocialClubName ist der Name im Social club und muss übereinstimmen! Auch hier darf er sich nicht doppeln!'
         );
         return;
     }
@@ -283,25 +299,25 @@ chat.registerCmd("addwl", (player, args) => {
 //     alt.emitClient(player, 'login:open');
 // });
 
-alt.onClient("login:checkdata", (player, social, pw) => {
+alt.onClient('login:checkdata', (player, social, pw) => {
     PlayersModel.findOne({ social: social }, function (err, res) {
         let found = res;
         if (res == null) {
-            chat.send(player, "Error!");
+            chat.send(player, 'Error!');
             return;
         }
         if (res.whitelisted != true) {
-            alt.emitClient(player, "notwl");
+            alt.emitClient(player, 'notwl');
         } else {
             bcrypt.compare(pw, res.pw).then((res) => {
                 if (res == true) {
-                    alt.emitClient(player, "login:close");
+                    alt.emitClient(player, 'login:close');
                     player.pos = {
                         x: 2021.7230224609375,
                         y: 3020.47900390625,
                         z: -72.6951904296875,
                     };
-                    chat.send(player, "Spawned sucsessfull!");
+                    chat.send(player, 'Spawned sucsessfull!');
                     startall(
                         player,
                         found.rank,
@@ -313,11 +329,11 @@ alt.onClient("login:checkdata", (player, social, pw) => {
                         { social: social },
                         { lastseen: Date.now() }
                     )
-                        .then(chat.send(player, "daten Aktuallisiert"))
+                        .then(chat.send(player, 'daten Aktuallisiert'))
                         .catch((err) => chat.send(player, err));
-                    alt.emitClient(player, "login:camfinish");
+                    alt.emitClient(player, 'login:camfinish');
                 } else {
-                    alt.emitClient(player, "login:wrongpw");
+                    alt.emitClient(player, 'login:wrongpw');
                 }
             });
         }
@@ -344,14 +360,14 @@ alt.onClient("login:checkdata", (player, social, pw) => {
  * anschließend, Spieler in Login schmeißen.
  */
 
-alt.onClient("statistic:addmin", (player, scname) => {
+alt.onClient('statistic:addmin', (player, scname) => {
     PlayersModel.updateOne(
         { social: scname },
         { $inc: { uptime: 1 } },
         { new: true },
         function (err, res) {
             if (err) {
-                chat.send(player, "{FF0000} ERROR: " + err);
+                chat.send(player, '{FF0000} ERROR: ' + err);
             }
         }
     );
@@ -362,11 +378,11 @@ alt.onClient("statistic:addmin", (player, scname) => {
     // });
 });
 
-alt.onClient("reg:senddata", (player, name, forum, pw, teamspeak, social) => {
+alt.onClient('reg:senddata', (player, name, forum, pw, teamspeak, social) => {
     bcrypt.genSalt(salt, function (err, salt) {
-        if (err) alt.emitClient("reg:error", err);
+        if (err) alt.emitClient('reg:error', err);
         bcrypt.hash(pw, salt, function (err, hash) {
-            if (err) chat.send(player, "reg:error", err);
+            if (err) chat.send(player, 'reg:error', err);
             let newPlayer = new PlayersModel({
                 name: name,
                 social: social,
@@ -375,12 +391,12 @@ alt.onClient("reg:senddata", (player, name, forum, pw, teamspeak, social) => {
                 teamspeak: teamspeak,
             });
             newPlayer.save(function (err) {
-                if (err) chat.send(player, "reg:error" + err);
+                if (err) chat.send(player, 'reg:error' + err);
                 else {
-                    alt.emitClient(player, "reg:succses");
+                    alt.emitClient(player, 'reg:succses');
                     alt.setTimeout(() => {
-                        console.log("try to open login from Registation");
-                        alt.emitClient(player, "login:open");
+                        console.log('try to open login from Registation');
+                        alt.emitClient(player, 'login:open');
                     }, 1000);
                 }
             });
@@ -400,9 +416,9 @@ alt.onClient("reg:senddata", (player, name, forum, pw, teamspeak, social) => {
  * zur sicherheit werden ebenfalls die TsID, Forumname und der Selbstgegebene Name abgefragt
  */
 
-chat.registerCmd("ban", (player, args) => {
+chat.registerCmd('ban', (player, args) => {
     if (args.length <= 5) {
-        chat.send(player, "/ban [Spieler] [Grund]");
+        chat.send(player, '/ban [Spieler] [Grund]');
     }
     let target = args[0];
 
@@ -410,18 +426,18 @@ chat.registerCmd("ban", (player, args) => {
 });
 
 alt.onClient(
-    "update:senddata",
+    'update:senddata',
     (player, name, forum, pw, teamspeak, social) => {
         PlayersModel.findOne(
             { social: social, name: name, forum: forum, teamspeak: teamspeak },
             function (err, res) {
                 if (err) {
-                    alt.emitClient(player, "update:error", err);
+                    alt.emitClient(player, 'update:error', err);
                 } else if (res == null) {
                     alt.emitClient(
                         player,
-                        "update:error",
-                        "Überprüfe deine Daten"
+                        'update:error',
+                        'Überprüfe deine Daten'
                     );
                 } else if (res != null) {
                     /**
@@ -435,7 +451,7 @@ alt.onClient(
                  */
                     bcrypt.hash(pw, salt, function (err, hash) {
                         if (err) {
-                            alt.emitClient(player, "update:error", err);
+                            alt.emitClient(player, 'update:error', err);
                         } else {
                             PlayersModel.updateOne(
                                 { name: name, social: social },
@@ -443,10 +459,10 @@ alt.onClient(
                             ).catch((err) => {
                                 chat.send(player, err);
                             });
-                            alt.emitClient(player, "update:succses");
+                            alt.emitClient(player, 'update:succses');
                             alt.setTimeout(() => {
-                                console.log("try to open login!");
-                                alt.emitClient(player, "login:open");
+                                console.log('try to open login!');
+                                alt.emitClient(player, 'login:open');
                             }, 1000);
                         }
                     });
@@ -458,30 +474,30 @@ alt.onClient(
 
 // Database Events
 
-alt.onClient("database:newChar", (player, newChar) => {
+alt.onClient('database:newChar', (player, newChar) => {
     alt.log(newChar);
     alt.log(typeof newChar);
-    let sc = player.getMeta("socialclub");
+    let sc = player.getMeta('socialclub');
     PlayersModel.findOneAndUpdate(
         { social: sc },
         { $push: { character: newChar[0] } },
         function (err, res) {
             if (err) {
-                alt.emitClient(player, "charedit:saveError", err);
+                alt.emitClient(player, 'charedit:saveError', err);
             } else {
-                alt.emitClient(player, "charedit:hide");
+                alt.emitClient(player, 'charedit:hide');
                 alt.emitClient(
                     player,
-                    "charselect:regenerate",
+                    'charselect:regenerate',
                     res.character,
                     maxcharchalc()
                 );
-                player.setMeta("usedCharedit", true);
+                player.setMeta('usedCharedit', true);
             }
         }
     );
 });
 
-alt.onClient("charselect:finished", (player, selected) => {
-    console.log(player.getMeta("dbID"));
+alt.onClient('charselect:finished', (player, selected) => {
+    console.log(player.getMeta('dbID'));
 });
