@@ -1,5 +1,4 @@
 export default class Weather {
-
     WeatherType = [
         { id: 0, name: 'EXTRASUNNY' },
         { id: 1, name: 'CLEAR' },
@@ -15,14 +14,14 @@ export default class Weather {
         { id: 11, name: 'BLIZZARD' },
         { id: 12, name: 'SNOWLIGHT' },
         { id: 13, name: 'XMAS' },
-        { id: 14, name: 'HALLOWEEN' }
+        { id: 14, name: 'HALLOWEEN' },
     ];
 
     /**
      * @param id: number
-     * 
+     *
      * @return string
-     * 
+     *
      */
     getWeatherById(id) {
         for (let weatherEntry in WeatherType) {
@@ -41,7 +40,6 @@ export default class Weather {
             7 = 12
             wenn es länger als x Stunden > 0°C ist, dann wetter = 13
         */
-
     }
 
     now() {
@@ -54,7 +52,7 @@ export default class Weather {
             h: h,
             min: min,
             sec: sec,
-        }
+        };
     }
 
     //generiert das nächste wetter
@@ -209,7 +207,7 @@ export default class Weather {
                 return 8;
             }
         } else if (courent_weather == 13) {
-            return 13
+            return 13;
         }
     }
 }

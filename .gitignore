@@ -2,5 +2,6 @@
 server.log
 node_modules/*
 cache/*
-cache/extended-test.resource
 startserver.cmd
+
+*.resource

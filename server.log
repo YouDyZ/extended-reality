@@ -1,249 +1,52 @@
-[20:43:41] alt:V Server, build #1098, branch release
-[20:43:41] Starting Extended-Reality on 45.131.108.30:22005
-[20:43:41] Loading resource firstres
-[20:43:41] Loading resource chat
-[20:43:41] Loaded resource chat
-[20:43:41] Loaded resource firstres
-[20:43:41] Loading resource pointing
-[20:43:41] Loaded resource pointing
-[20:43:41] Loading resource extended-reality
-[20:43:42] Loaded resource extended-reality
-[20:43:42] Loading resource extended-map
-[20:43:42] Loaded resource extended-map
-[20:43:42] Loading resource mrpd
-[20:43:42] Loaded resource mrpd
-[20:43:42] Loading resource extended-test
-[20:43:43] Loaded resource extended-test
-[20:43:43] Loading resource club-bahama
-[20:43:43] Loaded resource club-bahama
-[20:43:43] Loading resource hospital-pillbox
-[20:43:43] Loaded resource hospital-pillbox
-[20:43:43] Loading resource haircut_1
-[20:43:43] Loaded resource haircut_1
-[20:43:43] Loading resource Clothes-Menu-master
-[20:43:43] Loaded resource Clothes-Menu-master
-[20:43:43] Starting HTTP server on 45.131.108.30:22005
-[20:43:43] Server started
-[20:44:00][Warning] resourceManager.Update() took: 124 ms
-[20:44:00][Warning] resourceManager.Update() took: 96 ms
-[20:44:07][Warning] resourceManager.Update() took: 107 ms
-[20:44:07][Warning] resourceManager.Update() took: 60 ms
-[20:44:07] charselect:open
-[20:44:07][Warning] Event handler at extended-reality:file:///C:/Users/Administrator/Desktop/altv-beta/resources/extended-reality/server/charselect/charselect.mjs:5 was too long 10ms
-[20:44:17] [chat:cmd] Nico Blauer: /farm
-[20:44:25] [chat:cmd] Nico Blauer: /veh elegy
-[20:44:29] [chat:cmd] Nico Blauer: /modkit
-[20:44:36] [chat:cmd] Nico Blauer: /tune 11 4
-[20:44:46] [chat:cmd] Nico Blauer: /tune 0 4
-[20:50:13] [chat:cmd] Nico Blauer: /veh elegy
-[20:50:17] [chat:cmd] Nico Blauer: /modkit
-[20:51:59] [chat:cmd] Nico Blauer: /tune 48 1
-[20:52:02] [chat:cmd] Nico Blauer: /tune 48
-[20:52:10] [chat:cmd] Nico Blauer: /tune 48 3
-[20:52:11] [chat:cmd] Nico Blauer: /tune 48 4
-[20:52:13] [chat:cmd] Nico Blauer: /tune 48 5
-[20:52:15] [chat:cmd] Nico Blauer: /tune 48 6
-[20:52:18] [chat:cmd] Nico Blauer: /tune 48 7
-[20:52:21] [chat:cmd] Nico Blauer: /tune 48 8
-[20:52:23] [chat:cmd] Nico Blauer: /tune 48 9
-[20:52:26] [chat:cmd] Nico Blauer: /tune 48 10
-[20:52:26][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[20:52:26][Error]               player.vehicle.setMod(id, vari);
-[20:52:26][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[20:52:26][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/altv-beta/resources/chat/index.mjs:15 was too long 37ms
-[20:52:28] [chat:cmd] Nico Blauer: /tune 48 11
-[20:52:28][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[20:52:28][Error]               player.vehicle.setMod(id, vari);
-[20:52:28][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[20:52:31] [chat:cmd] Nico Blauer: /tune 48 9
-[20:52:35] [chat:cmd] Nico Blauer: /tune 48 7
-[20:52:38] [chat:cmd] Nico Blauer: /tune 48 6
-[20:52:40] [chat:cmd] Nico Blauer: /tune 48 5
-[20:52:43] [chat:cmd] Nico Blauer: /tune 48 6
-[20:52:49] [chat:cmd] Nico Blauer: /tune 48 9
-[20:52:53] [chat:cmd] Nico Blauer: /tune 48 5
-[20:52:59] [chat:cmd] Nico Blauer: /tune 48 2
-[20:53:01] [chat:cmd] Nico Blauer: /tune 48 1
-[20:53:03] [chat:cmd] Nico Blauer: /tune 48 5
-[20:53:05] [chat:cmd] Nico Blauer: /tune 48 1
-[20:53:08] [chat:cmd] Nico Blauer: /tune 48 6
-[20:53:31] [chat:cmd] Nico Blauer: /tune 22 1
-[20:53:42] [chat:cmd] Nico Blauer: /tune 43 1
-[20:53:57] [chat:cmd] Nico Blauer: /tune 43
-[20:54:02] [chat:cmd] Nico Blauer: /tune 43 2
-[20:54:26] [chat:cmd] Nico Blauer: /tune 18 1
-[20:54:33] [chat:cmd] Nico Blauer: /tune 12 3
-[20:54:39] [chat:cmd] Nico Blauer: /tune 11 4
-[20:54:44] [chat:cmd] Nico Blauer: /tune 15 4
-[20:54:53] [chat:cmd] Nico Blauer: /tune 16 5
-[20:55:13] [chat:cmd] Nico Blauer: /tune 34 5
-[20:55:13][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[20:55:13][Error]               player.vehicle.setMod(id, vari);
-[20:55:13][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[20:55:59] [chat:cmd] Nico Blauer: /tpwp
-[20:56:05] [chat:cmd] Nico Blauer: /tim 12 0 0
-[20:56:09] [chat:cmd] Nico Blauer: /time 12 0 0
-[20:58:57] [chat:cmd] Nico Blauer: /veh chino2
-[20:59:10] [chat:cmd] Nico Blauer: /modkit
-[20:59:25] [chat:cmd] Nico Blauer: /tune 48 1
-[20:59:27] [chat:cmd] Nico Blauer: /tune 48 2
-[20:59:28] [chat:cmd] Nico Blauer: /tune 48 3
-[20:59:30] [chat:cmd] Nico Blauer: /tune 48 4
-[20:59:32] [chat:cmd] Nico Blauer: /tune 48 5
-[20:59:34] [chat:cmd] Nico Blauer: /tune 48 6
-[20:59:38] [chat:cmd] Nico Blauer: /tune 48 6
-[20:59:40] [chat:cmd] Nico Blauer: /tune 48 7
-[20:59:45] [chat:cmd] Nico Blauer: /tune 48 8
-[20:59:47] [chat:cmd] Nico Blauer: /tune 48 9
-[20:59:50] [chat:cmd] Nico Blauer: /tune 48 10
-[20:59:50][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[20:59:50][Error]               player.vehicle.setMod(id, vari);
-[20:59:50][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[20:59:55] [chat:cmd] Nico Blauer: /tune 48 11
-[20:59:55][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[20:59:55][Error]               player.vehicle.setMod(id, vari);
-[20:59:55][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[20:59:55][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/altv-beta/resources/chat/index.mjs:15 was too long 14ms
-[20:59:57] [chat:cmd] Nico Blauer: /tune 48 9
-[21:00:10] [chat:cmd] Nico Blauer: /tune 22 1
-[21:00:21] [chat:cmd] Nico Blauer: /tune 44 1
-[21:00:21][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:00:21][Error]               player.vehicle.setMod(id, vari);
-[21:00:21][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:00:21][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/altv-beta/resources/chat/index.mjs:15 was too long 17ms
-[21:00:23] [chat:cmd] Nico Blauer: /tune 44 2
-[21:00:23][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:00:23][Error]               player.vehicle.setMod(id, vari);
-[21:00:23][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:00:24] [chat:cmd] Nico Blauer: /tune 44 3
-[21:00:24][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:00:24][Error]               player.vehicle.setMod(id, vari);
-[21:00:24][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:00:24][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/altv-beta/resources/chat/index.mjs:15 was too long 24ms
-[21:00:26] [chat:cmd] Nico Blauer: /tune 44 4
-[21:00:26][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:00:26][Error]               player.vehicle.setMod(id, vari);
-[21:00:26][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:01:11] [chat:cmd] Nico Blauer: /tune 18 1
-[21:01:20] [chat:cmd] Nico Blauer: /tune 12 3
-[21:01:25] [chat:cmd] Nico Blauer: /tune 11 4
-[21:01:39] [chat:cmd] Nico Blauer: /tune 35 1
-[21:01:47] [chat:cmd] Nico Blauer: /tune 35
-[21:01:53] [chat:cmd] Nico Blauer: /tune 35 2
-[21:01:55] [chat:cmd] Nico Blauer: /tune 35 3
-[21:01:58] [chat:cmd] Nico Blauer: /tune 35 4
-[21:01:59] [chat:cmd] Nico Blauer: /tune 35 5
-[21:02:13] [chat:cmd] Nico Blauer: /tune 41 2
-[21:02:13][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:02:13][Error]               player.vehicle.setMod(id, vari);
-[21:02:14][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:02:14][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/altv-beta/resources/chat/index.mjs:15 was too long 27ms
-[21:02:44] [chat:cmd] Nico Blauer: /tune 35 2
-[21:02:47] [chat:cmd] Nico Blauer: /tune 35 1
-[21:03:05] [chat:cmd] Nico Blauer: /tune 46 1
-[21:03:05][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:03:05][Error]               player.vehicle.setMod(id, vari);
-[21:03:05][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:03:05][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/altv-beta/resources/chat/index.mjs:15 was too long 7ms
-[21:03:06] [chat:cmd] Nico Blauer: /tune 46 2
-[21:03:06][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:03:06][Error]               player.vehicle.setMod(id, vari);
-[21:03:06][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:03:08] [chat:cmd] Nico Blauer: /tune 46 4
-[21:03:08][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:03:08][Error]               player.vehicle.setMod(id, vari);
-[21:03:08][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:03:08][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/altv-beta/resources/chat/index.mjs:15 was too long 43ms
-[21:03:52] [chat:cmd] Nico Blauer: /tune 15 4
-[21:03:52][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:03:52][Error]               player.vehicle.setMod(id, vari);
-[21:03:52][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:03:52][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/altv-beta/resources/chat/index.mjs:15 was too long 22ms
-[21:03:54] [chat:cmd] Nico Blauer: /tune 16 4
-[21:04:09] [chat:cmd] Nico Blauer: /tune 20 1
-[21:04:19] [chat:cmd] Nico Blauer: /tune 20
-[21:04:24] [chat:cmd] Nico Blauer: /tune 21 5
-[21:04:41] [chat:cmd] Nico Blauer: /tune 7 1
-[21:04:44] [chat:cmd] Nico Blauer: /tune 7 2
-[21:04:46] [chat:cmd] Nico Blauer: /tune 7 3
-[21:04:46][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:04:46][Error]               player.vehicle.setMod(id, vari);
-[21:04:46][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:04:48] [chat:cmd] Nico Blauer: /tune 7 2
-[21:05:36] [chat:cmd] Nico Blauer: /tune 7 1
-[21:05:49] [chat:cmd] Nico Blauer: /tune 0 1
-[21:05:49][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:05:49][Error]               player.vehicle.setMod(id, vari);
-[21:05:49][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:05:54] [chat:cmd] Nico Blauer: /tune 0 2
-[21:05:54][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:05:54][Error]               player.vehicle.setMod(id, vari);
-[21:05:54][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:06:00] [chat:cmd] Nico Blauer: /tune 46 2
-[21:06:00][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580
-[21:06:00][Error]               player.vehicle.setMod(id, vari);
-[21:06:00][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/altv-beta/resources/firstres/server/modules/commands.mjs:580:28
-[21:08:10] [chat:cmd] Nico Blauer: /seeedup 10
-[21:08:17] [chat:cmd] Nico Blauer: /seedup 10
-[21:28:56] [chat:cmd] Nico Blauer: /giveall
-[21:30:58] [chat:cmd] Nico Blauer: /veh elegy
-[21:33:12] [chat:cmd] Nico Blauer: /veh police3
-[21:33:24] [chat:cmd] Nico Blauer: /modkit
-[21:34:09] [chat:cmd] Nico Blauer: /modkit
-[21:36:21] [chat:cmd] Nico Blauer: /admin
-[21:36:23] [chat:cmd] Nico Blauer: /god
-[21:36:23][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/altv-beta/resources/chat/index.mjs:15 was too long 7ms
-[21:36:28] [chat:cmd] Nico Blauer: /veh police3
-[21:36:31] [chat:cmd] Nico Blauer: /modkit
-[21:36:35] [chat:cmd] Nico Blauer: /tune 11 4
-[21:46:22] [chat:cmd] Nico Blauer: /giveall
-[21:50:16] [chat:cmd] Nico Blauer: /farm
-[21:50:27] [chat:cmd] Nico Blauer: /casino
-[21:54:09][Warning] resourceManager.Update() took: 107 ms
-[21:54:09] charselect:open
-[21:54:09][Warning] Event handler at extended-reality:file:///C:/Users/Administrator/Desktop/altv-beta/resources/extended-reality/server/charselect/charselect.mjs:5 was too long 6ms
-[21:55:43][Warning] resourceManager.Update() took: 104 ms
-[21:55:43] charselect:open
-[21:55:52] [chat:cmd] Nico Blauer: /mueller
-[21:59:09][Warning] resourceManager.Update() took: 104 ms
-[23:52:31] Stopping resource extended-reality
-[23:52:31] Stopped resource extended-reality
-[23:52:31] Stopping resource firstres
-[23:52:31] Stopped resource firstres
-[23:52:31] Stopping resource extended-test
-[23:52:31] Stopped resource extended-test
-[23:52:31] Stopping resource chat
-[23:52:31] Stopped resource chat
-[23:52:31] Stopping resource extended-map
-[23:52:31] Stopped resource extended-map
-[23:52:31] Stopping resource pointing
-[23:52:31] Stopped resource pointing
-[23:52:31] Stopping resource mrpd
-[23:52:31] Stopped resource mrpd
-[23:52:31] Stopping resource club-bahama
-[23:52:31] Stopped resource club-bahama
-[23:52:31] Stopping resource hospital-pillbox
-[23:52:31] Stopped resource hospital-pillbox
-[23:52:31] Stopping resource haircut_1
-[23:52:31] Stopped resource haircut_1
-[23:52:31] Stopping resource Clothes-Menu-master
-[23:52:31] Stopped resource Clothes-Menu-master
-[23:52:31] Server shutdown
+[00:57:39] alt:V Server, build #1153, branch release
+[00:57:40] Starting Extended-Reality on 192.168.178.21:22005
+[00:57:40] Loading resource firstres
+[00:57:40] Loading resource chat
+[00:57:41] Loaded resource chat
+[00:57:41] Loaded resource firstres
+[00:57:41] Loading resource pointing
+[00:57:41] Loaded resource pointing
+[00:57:41] Loading resource extended-reality
+[00:57:50] Loaded resource extended-reality
+[00:57:50] Loading resource extended-map
+[00:57:50] Loaded resource extended-map
+[00:57:50] Loading resource mrpd
+[00:57:51] Loaded resource mrpd
+[00:57:51] Loading resource extended-test
+[00:57:52] Loaded resource extended-test
+[00:57:52] Loading resource club-bahama
+[00:57:52] Loaded resource club-bahama
+[00:57:52] Loading resource hospital-pillbox
+[00:57:52] Loaded resource hospital-pillbox
+[00:57:52] Loading resource haircut_1
+[00:57:52] Loaded resource haircut_1
+[00:57:52] Loading resource Clothes-Menu-master
+[00:57:53] Loaded resource Clothes-Menu-master
+[00:57:53] Starting HTTP server on 192.168.178.21:22005
+[00:57:53] Server started
+[01:09:02][Warning] resourceManager.Update() took: 87 ms
+[01:12:18][Warning] resourceManager.Update() took: 107 ms
+[01:18:25][Warning] resourceManager.Update() took: 178 ms
+[02:13:03] Stopping resource extended-reality
+[02:13:03] Stopped resource extended-reality
+[02:13:03] Stopping resource firstres
+[02:13:03] Stopped resource firstres
+[02:13:03] Stopping resource extended-test
+[02:13:03] Stopped resource extended-test
+[02:13:03] Stopping resource chat
+[02:13:03] Stopped resource chat
+[02:13:03] Stopping resource extended-map
+[02:13:03] Stopped resource extended-map
+[02:13:03] Stopping resource pointing
+[02:13:03] Stopped resource pointing
+[02:13:03] Stopping resource mrpd
+[02:13:03] Stopped resource mrpd
+[02:13:03] Stopping resource club-bahama
+[02:13:03] Stopped resource club-bahama
+[02:13:03] Stopping resource hospital-pillbox
+[02:13:03] Stopped resource hospital-pillbox
+[02:13:03] Stopping resource haircut_1
+[02:13:03] Stopped resource haircut_1
+[02:13:03] Stopping resource Clothes-Menu-master
+[02:13:03] Stopped resource Clothes-Menu-master
+[02:13:03] Server shutdown

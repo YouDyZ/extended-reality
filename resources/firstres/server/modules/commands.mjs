@@ -594,7 +594,7 @@ chat.registerCmd('att', (player, args) => {
         let rx = parseFloat(args[4]);
         let ry = parseFloat(args[5]);
         let rz = parseFloat(args[6]);
-        alt.emitClient(player, 'attach', hash, px, py, pz, rx, ry, rz);
+        alt.emitClient(null, 'attach', player.scriptID, hash, px, py, pz, rx, ry, rz);
     }
 });
 
