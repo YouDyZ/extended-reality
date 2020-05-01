@@ -4,20 +4,20 @@ import mysql from 'mysql';
 import bcrypt from 'bcryptjs';
 import mongoose from 'mongoose';
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '7z4G$zJpYYRs',
-    database: 'roleplay',
-});
+// const db = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '7z4G$zJpYYRs',
+//     database: 'roleplay',
+// });
 
-db.connect((err) => {
-    if (err) {
-        throw err;
-    } else {
-        console.log('\x1b[32m', `CONNECTTED MYSQL!`);
-    }
-});
+// db.connect((err) => {
+//     if (err) {
+//         throw err;
+//     } else {
+//         console.log('\x1b[32m', `CONNECTTED MYSQL!`);
+//     }
+// });
 
 // const createtable = function () {
 //     let sql =
@@ -76,10 +76,7 @@ mongoose
     .then((con) => {
         //console.log(con.connections);
         connection = con;
-        console.log(
-            '\x1b[32m',
-            `I am connected to the database: §${connection}`
-        );
+        console.log('\x1b[32m', `I am connected to the database: §${connection}`);
     });
 
 mongoose.set('useFindAndModify', false);
@@ -95,38 +92,12 @@ function fnHook(object, name) {
     })(object[name]);
 }
 
-const modelFunctions = [
-    'deleteMany',
-    'deleteOne',
-    'find',
-    'findById',
-    'findByIdAndDelete',
-    'findByIdAndRemove',
-    'findByIdAndRemove',
-    'findByIdAndUpdate',
-    'findByIdAndUpdate',
-    'findOne',
-    'findOneAndDelete',
-    'findOneAndRemove',
-    'findOneAndUpdate',
-    'replaceOne',
-    'updateMany',
-    'updateOne',
-    'save',
-];
+const modelFunctions = ['deleteMany', 'deleteOne', 'find', 'findById', 'findByIdAndDelete', 'findByIdAndRemove', 'findByIdAndRemove', 'findByIdAndUpdate', 'findByIdAndUpdate', 'findOne', 'findOneAndDelete', 'findOneAndRemove', 'findOneAndUpdate', 'replaceOne', 'updateMany', 'updateOne', 'save'];
 
-const prototypeFunctions = [
-    'delete',
-    'deleteOne',
-    'increment',
-    'remove',
-    'save',
-];
+const prototypeFunctions = ['delete', 'deleteOne', 'increment', 'remove', 'save'];
 
-for (let i = 0; i < modelFunctions.length; i++)
-    fnHook(mongoose.Model, modelFunctions[i]);
-for (let i = 0; i < prototypeFunctions.length; i++)
-    fnHook(mongoose.Model.prototype, prototypeFunctions[i]);
+for (let i = 0; i < modelFunctions.length; i++) fnHook(mongoose.Model, modelFunctions[i]);
+for (let i = 0; i < prototypeFunctions.length; i++) fnHook(mongoose.Model.prototype, prototypeFunctions[i]);
 
 /**
  * PlayerSchema
@@ -242,26 +213,14 @@ alt.onClient('list:sendSC', (player, SocialID) => {
 
 chat.registerCmd('removewl', (player, args) => {
     if (args[0] == 'help') {
-        chat.send(
-            player,
-            'mit /removewl kannst du Einen Spieler von der Whitelist Entfernen'
-        );
-        chat.send(
-            player,
-            'Der SocialClubName ist der Name im Social club und muss übereinstimmen!'
-        );
-        chat.send(
-            player,
-            'Den SocialClubname musste du 2x eigeben, damit kein ban versehendlich geschiet!'
-        );
+        chat.send(player, 'mit /removewl kannst du Einen Spieler von der Whitelist Entfernen');
+        chat.send(player, 'Der SocialClubName ist der Name im Social club und muss übereinstimmen!');
+        chat.send(player, 'Den SocialClubname musste du 2x eigeben, damit kein ban versehendlich geschiet!');
         return;
     }
 
     if (!args.length == 2 || args[0] != args[1]) {
-        chat.send(
-            player,
-            `{FF0000}/removewl [SocialClubName] [SocialClubName]`
-        );
+        chat.send(player, `{FF0000}/removewl [SocialClubName] [SocialClubName]`);
         return;
     }
 
@@ -279,14 +238,8 @@ chat.registerCmd('removewl', (player, args) => {
 chat.registerCmd('addwl', (player, args) => {
     if (args[0] == 'help') {
         chat.send(player, 'mit /addwl kannst du Einen Spieler hinzufügen');
-        chat.send(
-            player,
-            'Der Playername ist der Spielername, und ist frei wählbar, darf sich allerdings nicht doppeln'
-        );
-        chat.send(
-            player,
-            'Der SocialClubName ist der Name im Social club und muss übereinstimmen! Auch hier darf er sich nicht doppeln!'
-        );
+        chat.send(player, 'Der Playername ist der Spielername, und ist frei wählbar, darf sich allerdings nicht doppeln');
+        chat.send(player, 'Der SocialClubName ist der Name im Social club und muss übereinstimmen! Auch hier darf er sich nicht doppeln!');
         return;
     }
 
@@ -298,10 +251,7 @@ chat.registerCmd('addwl', (player, args) => {
     let scname = args[1];
 
     // Person.updateOne({}, { age: 'bar' });
-    PlayersModel.updateOne(
-        { name: playerName, social: scname },
-        { whitelisted: true }
-    )
+    PlayersModel.updateOne({ name: playerName, social: scname }, { whitelisted: true })
         .then(chat.send(player, ` ${scname} wurde gewhitlisted`))
         .catch((err) => {
             chat.send(player, err);
@@ -332,17 +282,8 @@ alt.onClient('login:checkdata', (player, social, pw) => {
                         z: -72.6951904296875,
                     };
                     chat.send(player, 'Spawned sucsessfull!');
-                    startall(
-                        player,
-                        found.rank,
-                        found.character,
-                        found._id,
-                        found.dbmaxchars
-                    );
-                    PlayersModel.updateOne(
-                        { social: social },
-                        { lastseen: Date.now() }
-                    )
+                    startall(player, found.rank, found.character, found._id, found.dbmaxchars);
+                    PlayersModel.updateOne({ social: social }, { lastseen: Date.now() })
                         .then(chat.send(player, 'daten Aktuallisiert'))
                         .catch((err) => chat.send(player, err));
                     alt.emitClient(player, 'login:camfinish');
@@ -375,16 +316,11 @@ alt.onClient('login:checkdata', (player, social, pw) => {
  */
 
 alt.onClient('statistic:addmin', (player, scname) => {
-    PlayersModel.updateOne(
-        { social: scname },
-        { $inc: { uptime: 1 } },
-        { new: true },
-        function (err, res) {
-            if (err) {
-                chat.send(player, '{FF0000} ERROR: ' + err);
-            }
+    PlayersModel.updateOne({ social: scname }, { $inc: { uptime: 1 } }, { new: true }, function (err, res) {
+        if (err) {
+            chat.send(player, '{FF0000} ERROR: ' + err);
         }
-    );
+    });
     // .then(chat.send(player, '+1 min'))
     // .catch((err) => {
     //     chat.send(player, err);
@@ -439,22 +375,14 @@ chat.registerCmd('ban', (player, args) => {
     PlayersModel.findOne();
 });
 
-alt.onClient(
-    'update:senddata',
-    (player, name, forum, pw, teamspeak, social) => {
-        PlayersModel.findOne(
-            { social: social, name: name, forum: forum, teamspeak: teamspeak },
-            function (err, res) {
-                if (err) {
-                    alt.emitClient(player, 'update:error', err);
-                } else if (res == null) {
-                    alt.emitClient(
-                        player,
-                        'update:error',
-                        'Überprüfe deine Daten'
-                    );
-                } else if (res != null) {
-                    /**
+alt.onClient('update:senddata', (player, name, forum, pw, teamspeak, social) => {
+    PlayersModel.findOne({ social: social, name: name, forum: forum, teamspeak: teamspeak }, function (err, res) {
+        if (err) {
+            alt.emitClient(player, 'update:error', err);
+        } else if (res == null) {
+            alt.emitClient(player, 'update:error', 'Überprüfe deine Daten');
+        } else if (res != null) {
+            /**
                  * bcrypt.hash(pw, salt, function(err, hash) {
                     if (err) chat.send(player, 'reg:error', err);
                     pw = hash;
@@ -463,28 +391,23 @@ alt.onClient(
                         `name: ${name}, forum: ${forum}, teamspeak:${teamspeak}, social: ${social}`
                     );
                  */
-                    bcrypt.hash(pw, salt, function (err, hash) {
-                        if (err) {
-                            alt.emitClient(player, 'update:error', err);
-                        } else {
-                            PlayersModel.updateOne(
-                                { name: name, social: social },
-                                { pw: hash }
-                            ).catch((err) => {
-                                chat.send(player, err);
-                            });
-                            alt.emitClient(player, 'update:succses');
-                            alt.setTimeout(() => {
-                                console.log('try to open login!');
-                                alt.emitClient(player, 'login:open');
-                            }, 1000);
-                        }
+            bcrypt.hash(pw, salt, function (err, hash) {
+                if (err) {
+                    alt.emitClient(player, 'update:error', err);
+                } else {
+                    PlayersModel.updateOne({ name: name, social: social }, { pw: hash }).catch((err) => {
+                        chat.send(player, err);
                     });
+                    alt.emitClient(player, 'update:succses');
+                    alt.setTimeout(() => {
+                        console.log('try to open login!');
+                        alt.emitClient(player, 'login:open');
+                    }, 1000);
                 }
-            }
-        );
-    }
-);
+            });
+        }
+    });
+});
 
 // Database Events
 
@@ -492,24 +415,15 @@ alt.onClient('database:newChar', (player, newChar) => {
     alt.log(newChar);
     alt.log(typeof newChar);
     let sc = player.getMeta('socialclub');
-    PlayersModel.findOneAndUpdate(
-        { social: sc },
-        { $push: { character: newChar[0] } },
-        function (err, res) {
-            if (err) {
-                alt.emitClient(player, 'charedit:saveError', err);
-            } else {
-                alt.emitClient(player, 'charedit:hide');
-                alt.emitClient(
-                    player,
-                    'charselect:regenerate',
-                    res.character,
-                    maxcharchalc()
-                );
-                player.setMeta('usedCharedit', true);
-            }
+    PlayersModel.findOneAndUpdate({ social: sc }, { $push: { character: newChar[0] } }, function (err, res) {
+        if (err) {
+            alt.emitClient(player, 'charedit:saveError', err);
+        } else {
+            alt.emitClient(player, 'charedit:hide');
+            alt.emitClient(player, 'charselect:regenerate', res.character, maxcharchalc());
+            player.setMeta('usedCharedit', true);
         }
-    );
+    });
 });
 
 alt.onClient('charselect:finished', (player, selected) => {

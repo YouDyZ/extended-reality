@@ -587,15 +587,21 @@ chat.registerCmd('att', (player, args) => {
         chat.send(player, '/att hash px py pz rx ry rz');
         return;
     } else {
-        let hash = parseInt(args[0]);
-        let px = parseFloat(args[1]);
-        let py = parseFloat(args[2]);
-        let pz = parseFloat(args[3]);
-        let rx = parseFloat(args[4]);
-        let ry = parseFloat(args[5]);
-        let rz = parseFloat(args[6]);
-        alt.emitClient(null, 'attach', player.scriptID, hash, px, py, pz, rx, ry, rz);
+        alt.emitClient(player, 'attach:getPlayer', args);
     }
+});
+
+alt.onClient('attach:return', (player, scriptID, args) => {
+    let hash = parseInt(args[0]);
+    let px = parseFloat(args[1]);
+    let py = parseFloat(args[2]);
+    let pz = parseFloat(args[3]);
+    let rx = parseFloat(args[4]);
+    let ry = parseFloat(args[5]);
+    let rz = parseFloat(args[6]);
+
+    chat.send(player, `${scriptID}`);
+    alt.emitClient(null, 'attach', player, hash, px, py, pz, rx, ry, rz);
 });
 
 chat.registerCmd('water', (player) => {

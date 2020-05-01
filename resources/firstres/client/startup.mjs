@@ -451,40 +451,25 @@ alt.onServer('nightvision', (status) => {
 
 let targetBlip;
 
-alt.onServer('noose:targetinit', () => {
+alt.onServer('noose:targetinit', (x, y, z, name) => {
     if (targetBlip) {
         targetBlip.destroy();
     }
     targetBlip = new alt.PointBlip(x, y, z);
     targetBlip.shortRange = true;
     targetBlip.sprite = 303;
-    targetBlip.color = 2;
+    targetBlip.color = 49;
     targetBlip.name = name;
-    native.setBlipCoords(targetBlip, targetx, targety, targetz);
+    //native.setBlipCoords(targetBlip, x, y, z);
+    //native.setGpsMultiRouteRender(true);
     native.setBlipRoute(targetBlip, true);
+    native.setNewWaypoint(x, y);
 });
 
 alt.onServer('noose:updateTarget', (targetx, targety, targetz, name) => {
     native.setBlipCoords(targetBlip, targetx, targety, targetz);
-    //native.setBlipRoute(targetBlip, true);
-    //TODO check if needed
 
-    /*Replaced
-    
-    let x = targetx;
-    let y = targety;
-    let z = targetz;
-    alt.log(`x: ${x}, y: ${y}, z: ${z}`);
-    name = name + "";
-    targetBlip = new alt.PointBlip(x, y, z);
-    targetBlip.shortRange = true;
-    targetBlip.sprite = 303;
-    targetBlip.color = 2;
-    targetBlip.name = name;
-    native.setNewWaypoint(x, y);
-    if (noosefinished == true) {
-        targetBlip.destroy();
-    }*/
+    native.setNewWaypoint(targetx, targety);
 });
 
 alt.onServer('noose:finished', () => {
@@ -565,6 +550,10 @@ alt.onServer('running:start', () => {
 // });
 
 let weaponMap = new Map();
+
+alt.onServer('attach', (args) => {
+    alt.emitServer('attach:return', alt.Player.local.scriptID, args);
+});
 
 alt.onServer('attach', (player, hash, px, py, pz, rx, ry, rz) => {
     alt.log('try to attatch');
