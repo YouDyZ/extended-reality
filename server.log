@@ -1,204 +1,39 @@
-[23:19:32] alt:V Server, build #1160, branch release
-[23:19:32] Starting Extended-Reality on 45.131.108.30:22005
-[23:19:32] Loading resource firstres
-[23:19:32] Loading resource chat
-[23:19:32] Loaded resource chat
-[23:19:32] Loaded resource firstres
-[23:19:32] Loading resource pointing
-[23:19:32] Loaded resource pointing
-[23:19:32] Loading resource extended-reality
-[23:19:34] Loaded resource extended-reality
-[23:19:34] Loading resource extended-map
-[23:19:34] Loaded resource extended-map
-[23:19:34] Loading resource mrpd
-[23:19:34] Loaded resource mrpd
-[23:19:34] Loading resource extended-test
-[23:19:34] Loaded resource extended-test
-[23:19:34] Loading resource club-bahama
-[23:19:34] Loaded resource club-bahama
-[23:19:34] Loading resource hospital-pillbox
-[23:19:34] Loaded resource hospital-pillbox
-[23:19:34] Loading resource haircut_1
-[23:19:34] Loaded resource haircut_1
-[23:19:34] Loading resource Clothes-Menu-master
-[23:19:35] Loaded resource Clothes-Menu-master
-[23:19:35] Starting HTTP server on 45.131.108.30:22005
-[23:19:35] Server started
-[23:19:49][Warning] resourceManager.Update() took: 124 ms
-[23:19:49][Warning] resourceManager.Update() took: 133 ms
-[23:19:52][Warning] resourceManager.Update() took: 117 ms
-[23:19:52] charselect:open
-[23:19:52][Warning] Event handler at extended-reality:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/extended-reality/server/charselect/charselect.mjs:5 was too long 8ms
-[23:20:03] [chat:cmd] Nico Blauer: /jva
-[23:20:08] [chat:cmd] Nico Blauer: /listall
-[23:20:12] [chat:cmd] Nico Blauer: /admin
-[23:20:14] [chat:cmd] Nico Blauer: /nooseagent
-[23:20:14][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/chat/index.mjs:15 was too long 10ms
-[23:20:19] [chat:cmd] Nico Blauer: /noosetarget 1
-[23:20:20][Warning] resourceManager.Update() took: 107 ms
-[23:20:21] charselect:open
-[23:20:21][Warning] Event handler at extended-reality:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/extended-reality/server/charselect/charselect.mjs:5 was too long 10ms
-[23:20:22] [chat:cmd] Nico Blauer: /veh t2ß
-[23:20:22][Error] Failed to create vehicle: 2086777747 is not a proper model hash
-[23:20:28] [chat:cmd] Nico Blauer: /veh intercepter
-[23:20:28][Error] Failed to create vehicle: 3508799320 is not a proper model hash
-[23:20:49] [chat:cmd] Nico Blauer: /veh lightshark
-[23:20:49][Error] Failed to create vehicle: 462083677 is not a proper model hash
-[23:20:49][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/chat/index.mjs:15 was too long 15ms
-[23:24:23] [chat:cmd] Nico Blauer: /veh technical3
-[23:25:27] [chat:cmd] Nico Blauer: /veh flashgt
-[23:25:42] [chat:cmd] Nico Blauer: /modkit
-[23:26:15] [chat:cmd] DesyncMaster: /farm
-[23:26:16] [chat:cmd] Nico Blauer: /tune 11 4
-[23:26:43] [chat:cmd] Nico Blauer: /tune 12 3
-[23:26:50] [chat:cmd] Nico Blauer: /tune 13 4
-[23:26:50][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:26:50][Error]               player.vehicle.setMod(id, vari);
-[23:26:50][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:27:03] [chat:cmd] Nico Blauer: /tune 14 2
-[23:27:07] [chat:cmd] Nico Blauer: /tune 14 1
-[23:27:34] [chat:cmd] Nico Blauer: /tune 15 4
-[23:27:53] [chat:cmd] Nico Blauer: /tune 14 1
-[23:27:57] [chat:cmd] Nico Blauer: /tune 16 5
-[23:28:02] [chat:cmd] Nico Blauer: /tune 18 1
-[23:28:25] [chat:cmd] Nico Blauer: /tune 20 1
-[23:28:28] [chat:cmd] Nico Blauer: /tune 22 1
-[23:28:40] [chat:cmd] Nico Blauer: /tune 23 5
-[23:28:40][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:28:40][Error]               player.vehicle.setMod(id, vari);
-[23:28:40][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:28:46] [chat:cmd] Nico Blauer: /tune 23 7
-[23:28:46][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:28:46][Error]               player.vehicle.setMod(id, vari);
-[23:28:46][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:29:11] [chat:cmd] Nico Blauer: /tune 48 2
-[23:29:17] [chat:cmd] Nico Blauer: /tune 48 3
-[23:29:20] [chat:cmd] Nico Blauer: /tune 48 4
-[23:29:24] [chat:cmd] Nico Blauer: /tune 48 5
-[23:29:27] [chat:cmd] Nico Blauer: /tune 48 6
-[23:29:30] [chat:cmd] Nico Blauer: /tune 48 7
-[23:29:34] [chat:cmd] Nico Blauer: /tune 48 8
-[23:29:37] [chat:cmd] Nico Blauer: /tune 48 9
-[23:29:42] [chat:cmd] DesyncMaster: /tpto 0
-[23:30:18] [chat:cmd] DesyncMaster: /veh insurgent
-[23:30:31] [chat:cmd] DesyncMaster: /veh insurgent2
-[23:30:44] [chat:cmd] DesyncMaster: /veh insurgent3
-[23:30:44][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/chat/index.mjs:15 was too long 9ms
-[23:31:14] [chat:cmd] Nico Blauer: /tune 48 10
-[23:31:18] [chat:cmd] Nico Blauer: /tune 48 11
-[23:31:18][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:31:18][Error]               player.vehicle.setMod(id, vari);
-[23:31:18][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:31:21] [chat:cmd] Nico Blauer: /tune 48 10
-[23:32:11] [chat:cmd] Nico Blauer: /tune 45 1
-[23:32:11][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:32:11][Error]               player.vehicle.setMod(id, vari);
-[23:32:11][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:32:14] [chat:cmd] Nico Blauer: /tune 45 2
-[23:32:14][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:32:14][Error]               player.vehicle.setMod(id, vari);
-[23:32:14][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:33:09] [chat:cmd] Nico Blauer: /modkit
-[23:33:29] [chat:cmd] Nico Blauer: /modkit
-[23:33:35] [chat:cmd] Nico Blauer: /tune 14 1
-[23:33:37] [chat:cmd] Nico Blauer: /tune 14 4
-[23:33:46] [chat:cmd] Nico Blauer: /tune 22 1
-[23:33:48] [chat:cmd] DesyncMaster: /veh insurgent4
-[23:33:48][Error] Failed to create vehicle: 2684755967 is not a proper model hash
-[23:33:48][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/chat/index.mjs:15 was too long 7ms
-[23:33:54] [chat:cmd] Nico Blauer: /tune 449 1
-[23:33:54][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:33:54][Error]               player.vehicle.setMod(id, vari);
-[23:33:54][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:33:56] [chat:cmd] Nico Blauer: /tune 49 1
-[23:33:56][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:33:56][Error]               player.vehicle.setMod(id, vari);
-[23:33:56][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:33:59] [chat:cmd] Nico Blauer: /tune 49 2
-[23:33:59][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:33:59][Error]               player.vehicle.setMod(id, vari);
-[23:33:59][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:33:59][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/chat/index.mjs:15 was too long 13ms
-[23:34:06] [chat:cmd] Nico Blauer: /tune 10 1
-[23:34:10] [chat:cmd] Nico Blauer: /tune 10 2
-[23:34:10][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:34:10][Error]               player.vehicle.setMod(id, vari);
-[23:34:10][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:34:12] [chat:cmd] Nico Blauer: /tune 10 1
-[23:34:15] [chat:cmd] Nico Blauer: /tune 10 4
-[23:34:15][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:34:15][Error]               player.vehicle.setMod(id, vari);
-[23:34:15][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:34:21] [chat:cmd] Nico Blauer: /tune 10 5
-[23:34:21][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:34:21][Error]               player.vehicle.setMod(id, vari);
-[23:34:21][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:34:25] [chat:cmd] Nico Blauer: /tune 10 2
-[23:34:25][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:34:25][Error]               player.vehicle.setMod(id, vari);
-[23:34:25][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:34:34] [chat:cmd] Nico Blauer: /tune 10 1
-[23:34:38] [chat:cmd] Nico Blauer: /tune 10 3
-[23:34:38][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:34:38][Error]               player.vehicle.setMod(id, vari);
-[23:34:38][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:34:46] [chat:cmd] Nico Blauer: /tune 10 4
-[23:34:46][Error] [V8] Exception at firstres:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580
-[23:34:46][Error]               player.vehicle.setMod(id, vari);
-[23:34:46][Error]   Error: mod doesn't exist
-    at file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/firstres/server/modules/commands.mjs:580:28
-[23:36:00] [chat:cmd] DesyncMaster: /veh menancer
-[23:36:00][Error] Failed to create vehicle: 259325535 is not a proper model hash
-[23:36:14] [chat:cmd] DesyncMaster: /veh menacer
-[23:37:44] [chat:cmd] DesyncMaster: /veh technical
-[23:39:11] [chat:cmd] DesyncMaster: /veh technical3
-[23:41:46] [chat:cmd] DesyncMaster: /veh zhaba
-[23:42:35] [chat:cmd] DesyncMaster: /veh nightskark
-[23:42:35][Error] Failed to create vehicle: 3511023870 is not a proper model hash
-[23:42:39] [chat:cmd] DesyncMaster: /veh nightshark
-[23:43:51] [chat:cmd] DesyncMaster: /veh limo 2
-[23:43:51][Error] Failed to create vehicle: 3830760436 is not a proper model hash
-[23:43:55] [chat:cmd] DesyncMaster: /veh limo2
-[23:45:44] [chat:cmd] DesyncMaster: /veh baller5
-[23:46:47] [chat:cmd] DesyncMaster: /veh baller6
-[23:47:27] [chat:cmd] DesyncMaster: /veh xls2
-[23:49:22] [chat:cmd] DesyncMaster: /veh airtruck
-[23:49:22][Error] Failed to create vehicle: 3974978326 is not a proper model hash
-[23:50:05] [chat:cmd] DesyncMaster: /veh airtruck
-[23:50:05][Error] Failed to create vehicle: 3974978326 is not a proper model hash
-[23:50:05][Warning] Event handler at chat:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/chat/index.mjs:15 was too long 6ms
-[23:50:38] [chat:cmd] DesyncMaster: /veh airtrug
-[23:50:38][Error] Failed to create vehicle: 3826691283 is not a proper model hash
-[23:50:49] [chat:cmd] DesyncMaster: /veh airtug
-[23:53:32] [chat:cmd] DesyncMaster: /veh caddy
-[23:53:52] [chat:cmd] DesyncMaster: /veh caddy2
-[23:54:22] [chat:cmd] DesyncMaster: /veh caddy3
-[23:56:34] [chat:cmd] DesyncMaster: /veh forklift
-[23:57:25] [chat:cmd] DesyncMaster: /veh mover
-[23:57:25][Error] Failed to create vehicle: 3732852049 is not a proper model hash
-[23:57:47] [chat:cmd] DesyncMaster: /veh moWer
-[00:00:19] [chat:cmd] DesyncMaster: /veh sadler
-[00:01:44] [chat:cmd] DesyncMaster: /veh scrap
-[00:02:38] [chat:cmd] DesyncMaster: /veh towtruck
-[00:02:58] [chat:cmd] DesyncMaster: /veh towtruck2
-[00:04:28] [chat:cmd] DesyncMaster: /veh tractor
-[00:08:28] [chat:cmd] DesyncMaster: /veh tractor2
-[00:09:58] [chat:cmd] DesyncMaster: /veh utillitytruck
-[00:09:58][Error] Failed to create vehicle: 568696328 is not a proper model hash
-[00:10:46] [chat:cmd] DesyncMaster: /veh utillitruck
-[00:11:41] [chat:cmd] DesyncMaster: /veh utillitruck2
-[00:12:09] [chat:cmd] DesyncMaster: /veh utillitruck3
+[21:58:34] alt:V Server, build #1160, branch release
+[21:58:34] Starting Extended-Reality on 45.131.108.30:22005
+[21:58:34] Loading resource firstres
+[21:58:34] Loading resource chat
+[21:58:34] Loaded resource chat
+[21:58:34] Loaded resource firstres
+[21:58:34] Loading resource pointing
+[21:58:34] Loaded resource pointing
+[21:58:34] Loading resource extended-reality
+[21:58:35] Loaded resource extended-reality
+[21:58:35] Loading resource extended-map
+[21:58:35] Loaded resource extended-map
+[21:58:35] Loading resource mrpd
+[21:58:36] Loaded resource mrpd
+[21:58:36] Loading resource extended-test
+[21:58:36] Loaded resource extended-test
+[21:58:36] Loading resource club-bahama
+[21:58:37] Loaded resource club-bahama
+[21:58:37] Loading resource hospital-pillbox
+[21:58:37] Loaded resource hospital-pillbox
+[21:58:37] Loading resource haircut_1
+[21:58:37] Loaded resource haircut_1
+[21:58:37] Loading resource Clothes-Menu-master
+[21:58:37] Loaded resource Clothes-Menu-master
+[21:58:37] Starting HTTP server on 45.131.108.30:22005
+[21:58:37] Server started
+[21:58:55][Warning] resourceManager.Update() took: 126 ms
+[21:58:55][Warning] resourceManager.Update() took: 56 ms
+[21:58:55] charselect:open
+[21:59:09][Warning] resourceManager.Update() took: 110 ms
+[21:59:09] charselect:open
+[21:59:09][Warning] Event handler at extended-reality:file:///C:/Users/Administrator/Desktop/Github/extended-reality/resources/extended-reality/server/charselect/charselect.mjs:5 was too long 7ms
+[21:59:10] [chat:cmd] Nico Blauer: /att -739394447 0.1 -0.15 0.35 0 90 0
+[21:59:17] [chat:cmd] Nico Blauer: /att -739394447 0.1 -0.15 0.35 0 90 0
+[21:59:52] [chat:cmd] DesyncMaster: /att -739394447 0.1 -0.15 0.35 0 90 0
+[22:00:08] [chat:cmd] DesyncMaster: /giveall
+[22:23:00][Warning] resourceManager.Update() took: 73 ms
+[22:39:51] [chat:cmd] Nico Blauer: /listall
+[03:21:27][Warning] resourceManager.Update() took: 106 ms

@@ -587,11 +587,24 @@ chat.registerCmd('att', (player, args) => {
         chat.send(player, '/att hash px py pz rx ry rz');
         return;
     } else {
-        alt.emitClient(player, 'attach:getPlayer', args);
+        test(player, args);
     }
 });
 
-alt.onClient('attach:return', (player, scriptID, args) => {
+//alt.onClient('attach:return', (player, scriptID, args) => {
+//    let hash = parseInt(args[0]);
+//    let px = parseFloat(args[1]);
+//    let py = parseFloat(args[2]);
+//    let pz = parseFloat(args[3]);
+//    let rx = parseFloat(args[4]);
+//    let ry = parseFloat(args[5]);
+//    let rz = parseFloat(args[6]);
+//
+//    chat.send(player, `${scriptID}`);
+//    alt.emitClient(null, 'attach', scriptID, hash, px, py, pz, rx, ry, rz);
+//});
+
+function test(player, args) {
     let hash = parseInt(args[0]);
     let px = parseFloat(args[1]);
     let py = parseFloat(args[2]);
@@ -600,9 +613,9 @@ alt.onClient('attach:return', (player, scriptID, args) => {
     let ry = parseFloat(args[5]);
     let rz = parseFloat(args[6]);
 
-    chat.send(player, `${scriptID}`);
+    chat.send(player, `${player.scriptID}`);
     alt.emitClient(null, 'attach', player, hash, px, py, pz, rx, ry, rz);
-});
+}
 
 chat.registerCmd('water', (player) => {
     alt.emitClient(player, 'isinWater');

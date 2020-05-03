@@ -62,3 +62,4 @@ alt.onClient('charselect:new', (player) => {
         z: -72.6951904296875,
     };
 });
+

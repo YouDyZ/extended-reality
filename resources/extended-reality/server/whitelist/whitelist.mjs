@@ -28,6 +28,8 @@ import mongoose from 'mongoose';
 //     });
 // };
 
+// INSERT INTO spieler (name, social....) VALUES (asdfasdf,.asdfasdf,asdfasdf,-----), (adsf,asdf,asd,fafd);
+
 // createtable();
 
 const salt = 10;

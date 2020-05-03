@@ -470,6 +470,7 @@ alt.onServer('noose:updateTarget', (targetx, targety, targetz, name) => {
     native.setBlipCoords(targetBlip, targetx, targety, targetz);
 
     native.setNewWaypoint(targetx, targety);
+    native.setNewWaypoint(x, y);
 });
 
 alt.onServer('noose:finished', () => {
@@ -561,11 +562,14 @@ alt.onServer('attach', (player, hash, px, py, pz, rx, ry, rz) => {
     if (displayWeapon) {
         native.deleteEntity(displayWeapon);
     }
+
     ///att -739394447 0.1 -0.15 0.35 0 90 0 (Im Rücken)
 
-    displayWeapon = native.createObjectNoOffset(hash, alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z, false, true, false);
-    weaponMap.set(player, displayWeapon);
-    native.attachEntityToEntity(displayWeapon, player, 0, px, py, pz, rx, ry, rz, false, false, false, true, 0, true);
+    displayWeapon = native.createObjectNoOffset(hash, player.pos.x, player.pos.y, player.pos.z, false, true, false);
+    alt.log('created weapon');
+    weaponMap.set(player.scriptID, displayWeapon);
+    native.attachEntityToEntity(displayWeapon, player.scriptID, 0, px, py, pz, rx, ry, rz, false, false, false, true, 0, true);
+    alt.log('attached entity');
     //native.attachEntityToEntity(entity1_number, entity2_number, boneIndex_number, xPos_number, yPos_number, zPos_number, xRot_number, yRot_number, zRot_number, p9_boolean, useSoftPinning_boolean, collision_boolean, isPed_boolean, vertexIndex_number, fixedRot_boolean);
 });
 
