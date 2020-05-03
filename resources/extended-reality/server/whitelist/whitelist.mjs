@@ -289,6 +289,7 @@ alt.onClient('login:checkdata', (player, social, pw) => {
                         .then(chat.send(player, 'daten Aktuallisiert'))
                         .catch((err) => chat.send(player, err));
                     alt.emitClient(player, 'login:camfinish');
+                    alt.emit('player:sync', player);
                 } else {
                     alt.emitClient(player, 'login:wrongpw');
                 }

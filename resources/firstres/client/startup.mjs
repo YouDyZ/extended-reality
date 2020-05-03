@@ -550,12 +550,10 @@ alt.onServer('running:start', () => {
 //     native.doorControl(hashKey, posX, posY, posZ, state, rotX, rotY, rotZ);
 // });
 
+// alt.onServer('attach', (args) => {
+//     alt.emitServer('attach:return', alt.Player.local.scriptID, args);
+// });
 let weaponMap = new Map();
-
-alt.onServer('attach', (args) => {
-    alt.emitServer('attach:return', alt.Player.local.scriptID, args);
-});
-
 alt.onServer('attach', (player, hash, px, py, pz, rx, ry, rz) => {
     alt.log('try to attatch');
     let displayWeapon = weaponMap.get(player);
