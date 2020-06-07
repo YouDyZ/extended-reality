@@ -553,23 +553,6 @@ alt.onServer('running:start', () => {
 // alt.onServer('attach', (args) => {
 //     alt.emitServer('attach:return', alt.Player.local.scriptID, args);
 // });
-let weaponMap = new Map();
-alt.onServer('attach', (player, hash, px, py, pz, rx, ry, rz) => {
-    alt.log('try to attatch');
-    let displayWeapon = weaponMap.get(player);
-    if (displayWeapon) {
-        native.deleteEntity(displayWeapon);
-    }
-
-    ///att -739394447 0.1 -0.15 0.35 0 90 0 (Im Rücken)
-
-    displayWeapon = native.createObjectNoOffset(hash, player.pos.x, player.pos.y, player.pos.z, false, true, false);
-    alt.log('created weapon');
-    weaponMap.set(player.scriptID, displayWeapon);
-    native.attachEntityToEntity(displayWeapon, player.scriptID, 0, px, py, pz, rx, ry, rz, false, false, false, true, 0, true);
-    alt.log('attached entity');
-    //native.attachEntityToEntity(entity1_number, entity2_number, boneIndex_number, xPos_number, yPos_number, zPos_number, xRot_number, yRot_number, zRot_number, p9_boolean, useSoftPinning_boolean, collision_boolean, isPed_boolean, vertexIndex_number, fixedRot_boolean);
-});
 
 alt.onServer('isinWater', () => {
     alt.log(native.isEntityInWater(alt.Player.local.scriptID));
@@ -578,4 +561,8 @@ alt.onServer('isinWater', () => {
 alt.onServer('tune:veh', (veh, type, index) => {
     native.setVehicleMod(veh, type, index, false);
     alt.log(native.getVehicleMod(veh.scriptID, type));
+});
+
+alt.onServer('heat:toggle', (toggle) => {
+    native.setSeethrough(toggle);
 });

@@ -8,6 +8,7 @@ import './admin/admin.mjs';
 import './chareditor/editor.mjs';
 import './charselect/charselect.mjs';
 //mport './vehicle/EnterVehicle.js';
+import './attachment/attachment.mjs';
 
 console.log('===> Extended-reality werden geladen');
 

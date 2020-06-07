@@ -59,7 +59,7 @@ setInterval((player) => {
     alt.emitClient(null, 'weather:update', currentWeather_string, nextWetter_string);
     current_weather = nextWetter;
     currentWeather_string = nextWetter_string;
-}, 500000);
+}, 50000);
 
 let now_init = weather.now();
 console.log(now_init);
