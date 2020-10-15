@@ -20,6 +20,7 @@ alt.onClient('charselect:resetpos', (player) => {
     };
 });
 
+
 alt.on('charselect:finished', (player, char) => {
     player.pos = {
         x: char.position.x,

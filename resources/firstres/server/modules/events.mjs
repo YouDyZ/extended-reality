@@ -5,10 +5,11 @@ import chat from 'chat';
 console.log('===> firstres werden geladen');
 
 alt.on('playerConnect', (player) => {
-    //chat.broadcast(`${player.socialId} ist beigetreten!`);
+    chat.broadcast(`${player.socialId} ist beigetreten!`);
     alt.emitClient(player, 'onConnection', player);
     alt.emitClient(player, 'createMarker', 935, 47, 80);
     alt.emitClient(player, 'createMarker', 1089, 206, -50);
+    player.spawn(2021.7230224609375, 3020.47900390625, -72.6951904296875, 500);
     // alt.emitClient(player, 'player:sync', stunde, minute, sekunde, currentWeather_string);
 });
 

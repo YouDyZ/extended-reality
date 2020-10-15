@@ -5,8 +5,8 @@ import './commands.mjs';
 import './speedometer.mjs';
 import './whitelist/whitelist.mjs';
 import './admin/admin.mjs';
-import './chareditor/editor.mjs';
-import './charselect/charselect.mjs';
+//import './chareditor/editor.mjs';
+//import './charselect/charselect.mjs';
 //mport './vehicle/EnterVehicle.js';
 import './attachment/attachment.mjs';
 
