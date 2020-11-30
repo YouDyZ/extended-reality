@@ -1,0 +1,7 @@
+.history/*
+server.log
+node_modules/*
+/cache/*
+startserver.cmd
+
+*.resource

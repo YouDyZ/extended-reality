@@ -353,11 +353,6 @@ const CharSchema = new mongoose.Schema({
         required: true,
         default: [],
     },
-    visiting: {
-        type: String,
-        required: true,
-        default: '',
-    },
     alc: {
         type: Number,
         required: true,

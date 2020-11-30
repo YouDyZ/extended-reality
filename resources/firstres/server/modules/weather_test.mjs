@@ -17,7 +17,7 @@ let nextWetter_string;
 var current_weather = 0;
 let currentWeather_string = 'EXTRASUNNY';
 
-setInterval(player => {
+setInterval((player) => {
     nextWetter = weather.next(current_weather);
 
     //let courrent_weather = Math.round(Math.random() * 2);
@@ -59,7 +59,7 @@ setInterval(player => {
     alt.emitClient(null, 'weather:update', currentWeather_string, nextWetter_string);
     current_weather = nextWetter;
     currentWeather_string = nextWetter_string;
-}, 500000);
+}, 50000);
 
 let now_init = weather.now();
 console.log(now_init);
@@ -123,7 +123,7 @@ chat.registerCmd('time', (player, args) => {
 //     alt.emitClient(player, 'noose:sync', noose);
 // });
 
-chat.registerCmd('now', player => {
+chat.registerCmd('now', (player) => {
     //var now = new Date();
     let now = weather.now();
 
@@ -135,7 +135,7 @@ chat.registerCmd('now', player => {
     alt.emitClient(null, 'time:update', now.h, now.min, now.sec);
 });
 
-chat.registerCmd('zeit', player => {
+chat.registerCmd('zeit', (player) => {
     chat.send(player, `${stunde} : ${minute} Uhr`);
 });
 
@@ -143,7 +143,7 @@ let lastWeather;
 let lastWeatherString;
 let noose = false;
 
-chat.registerCmd('noose', player => {
+chat.registerCmd('noose', (player) => {
     if (noose) {
         noose = false;
         chat.broadcast(`{FF0000}NOOSE PROTOKILL DEAKTIVIERT`);
@@ -178,15 +178,15 @@ let noose_target = undefined;
 let noose_finished = true;
 let noose_inited;
 
-let displayTarget = function(target) {
-    let updateTarget = setInterval(target => {
-        let player = alt.Player.all.filter(p => p.getMeta('noose') === 'noose');
+let displayTarget = function (target) {
+    let updateTarget = setInterval((target) => {
+        let player = alt.Player.all.filter((p) => p.getMeta('noose') === 'noose');
 
         if (player == undefined) return;
 
         if (noose_finished == true) {
             clearInterval(updateTarget);
-            player.forEach(player => {
+            player.forEach((player) => {
                 alt.emitClient(player, 'noose:finished');
                 chat.send(player, 'Noose target finished!');
             });
@@ -196,8 +196,7 @@ let displayTarget = function(target) {
 
         //console.log(noose_target.pos.x, noose_target.pos.y, noose_target.pos.z, noose_target.name);
 
-        player.forEach(player => {
-            alt.emitClient(player, 'noose:targetinit');
+        player.forEach((player) => {
             noose_inited = true;
             alt.emitClient(player, 'noose:updateTarget', noose_target.pos.x, noose_target.pos.y, noose_target.pos.z, noose_target.name);
         });
@@ -214,13 +213,13 @@ chat.registerCmd('noosetarget', (player, args) => {
 
     noose_finished = false;
 
-    noose_target = alt.Player.all.find(player => player.id == args[0]);
+    noose_target = alt.Player.all.find((player) => player.id == args[0]);
 
     if (noose_target.pos.x == undefined) {
         chat.send(player, 'target not found!');
         return;
     }
-
+    alt.emitClient(player, 'noose:targetinit', noose_target.pos.x, noose_target.pos.y, noose_target.pos.z, noose_target.name);
     noose_inited = true;
     chat.send(player, `Target: ${noose_target.name}!`);
 
@@ -231,7 +230,7 @@ chat.registerCmd('noosefinished', () => {
     noose_finished = true;
 });
 
-chat.registerCmd('nooseagent', player => {
+chat.registerCmd('nooseagent', (player) => {
     if (!player.getMeta('admin')) {
         chat.send(player, 'keine Berechtigung');
         return;
@@ -249,6 +248,6 @@ chat.registerCmd('nooseagent', player => {
     }
 });
 
-chat.registerCmd('script', player => {
+chat.registerCmd('script', (player) => {
     chat.send(player, `${player.id}`);
 });

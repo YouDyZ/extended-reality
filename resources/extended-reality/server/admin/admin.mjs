@@ -17,27 +17,22 @@ chat.registerCmd('listall', (player) => {
     });
 });
 
-// let charaktes = [];
+chat.registerCmd('addipl', (player, args) => {
+    if (args[1] == undefined && args.length != 0) {
+        alt.emitClient(player, 'ipls:add', args[0]);
+    } else if (args[1] == 'all') {
+        alt.emitClient(null, 'ipls:add', args[0]);
+    } else {
+        chat.send(player, '{FF0000} /addipl (IPLNAME) "all"(optional)');
+    }
+});
 
-// chat.registerCmd('charsel', (player, args) => {
-//     alt.emitClient(player, 'charselect:init', parseInt(args[0]), charaktes);
-// });
-
-// chat.registerCmd('addchar', (player, args) => {
-//     if (args.length != 2) {
-//         return;
-//     }
-
-//     let newChar = {
-//         forname: args[0],
-//         lastname: args[1],
-//     };
-
-//     charaktes.push(newChar);
-
-//     chat.send(player, `${newChar.forname} ${newChar.lastname} wurde Hinzugefügt.`);
-// });
-
-// chat.registerCmd('listchar', (player) => {
-//     chat.send(player, `${charaktes}`);
-// });
+chat.registerCmd('removeipl', (player, args) => {
+    if (args[1] == undefined && args.length != 0) {
+        alt.emitClient(player, 'ipls:remove', args[0]);
+    } else if (args[1] == 'all') {
+        alt.emitClient(null, 'ipls:remove', args[0]);
+    } else {
+        chat.send(player, '{FF0000} /removeipl (IPLNAME) "all"(optional)');
+    }
+});

@@ -582,22 +582,6 @@ chat.registerCmd('tune', (player, args) => {
     }
 });
 
-chat.registerCmd('att', (player, args) => {
-    if (args.length != 7) {
-        chat.send(player, '/att hash px py pz rx ry rz');
-        return;
-    } else {
-        let hash = parseInt(args[0]);
-        let px = parseFloat(args[1]);
-        let py = parseFloat(args[2]);
-        let pz = parseFloat(args[3]);
-        let rx = parseFloat(args[4]);
-        let ry = parseFloat(args[5]);
-        let rz = parseFloat(args[6]);
-        alt.emitClient(player, 'attach', hash, px, py, pz, rx, ry, rz);
-    }
-});
-
 chat.registerCmd('water', (player) => {
     alt.emitClient(player, 'isinWater');
 });
@@ -619,4 +603,18 @@ chat.registerCmd('speedup', (player, args) => {
 chat.registerCmd('dimension', (player, args) => {
     chat.send(player, `Du wirst von Dimension ${player.dimension} in ${args[0]} verschoben!`);
     player.dimension = parseInt(args[0]);
+});
+
+chat.registerCmd('heat', (player) => {
+    let isOn = player.getMeta('heat');
+    chat.send(player, `${isOn}`);
+    if (isOn) {
+        player.setMeta('heat', undefined);
+        chat.send(player, 'heat off');
+        alt.emitClient(player, 'heat:toggle', false);
+    } else {
+        player.setMeta('heat', true);
+        chat.send(player, 'heat on');
+        alt.emitClient(player, 'heat:toggle', true);
+    }
 });

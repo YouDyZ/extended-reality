@@ -4,16 +4,17 @@ import chat from 'chat';
 
 console.log('===> firstres werden geladen');
 
-alt.on('playerConnect', player => {
-    //chat.broadcast(`${player.socialId} ist beigetreten!`);
+alt.on('playerConnect', (player) => {
+    chat.broadcast(`${player.socialId} ist beigetreten!`);
     alt.emitClient(player, 'onConnection', player);
     alt.emitClient(player, 'createMarker', 935, 47, 80);
     alt.emitClient(player, 'createMarker', 1089, 206, -50);
+    player.spawn(2021.7230224609375, 3020.47900390625, -72.6951904296875, 500);
     // alt.emitClient(player, 'player:sync', stunde, minute, sekunde, currentWeather_string);
 });
 
 alt.on('playerDisconnect', (player, reason) => {
-    console.log(reason);
+    alt.emit('player:disconnect', player);
 });
 
 alt.onClient('SocialClub', (player, socialClub) => {
@@ -126,7 +127,7 @@ alt.on('entityLeaveColshape', (colshape, entity) => {
     }
 });
 
-chat.registerCmd('casino', player => {
+chat.registerCmd('casino', (player) => {
     player.pos = { x: 930, y: 37, z: 82 };
 });
 
@@ -137,12 +138,12 @@ chat.registerCmd('casino', player => {
 });
 */
 
-alt.onClient('pressedJ', player => {
+alt.onClient('pressedJ', (player) => {
     chat.broadcast(`${player.id} hat J gedrückt!`);
     return;
 });
 
-alt.onClient('pressedE', player => {
+alt.onClient('pressedE', (player) => {
     if (player.getMeta('enterCasino')) {
         player.pos = { x: 1087, y: 218, z: -49 };
         chat.send(player, 'Du bist im Casino');

@@ -1,5 +1,5 @@
 import game from 'natives';
-import * as alt from 'alt';
+import * as alt from 'alt-client';
 import * as native from 'natives';
 import * as chat from 'chat';
 //import { compare } from 'bcryptjs';
@@ -450,40 +450,35 @@ alt.onServer('nightvision', (status) => {
 });
 
 let targetBlip;
-let noosefinished;
 
-alt.onServer('noose:targetinit', () => {
-    noosefinished = false;
-});
-
-alt.onServer('noose:updateTarget', (targetx, targety, targetz, name) => {
-    if (targetBlip != undefined) {
+alt.onServer('noose:targetinit', (x, y, z, name) => {
+    if (targetBlip) {
         targetBlip.destroy();
     }
-
-    let x = targetx;
-    let y = targety;
-    let z = targetz;
-    alt.log(`x: ${x}, y: ${y}, z: ${z}`);
-    name = name + '';
-
     targetBlip = new alt.PointBlip(x, y, z);
     targetBlip.shortRange = true;
     targetBlip.sprite = 303;
-    targetBlip.color = 2;
+    targetBlip.color = 49;
     targetBlip.name = name;
+    //native.setBlipCoords(targetBlip, x, y, z);
+    //native.setGpsMultiRouteRender(true);
+    native.setBlipRoute(targetBlip, true);
     native.setNewWaypoint(x, y);
-    if (noosefinished == true) {
-        targetBlip.destroy();
-    }
+});
+
+alt.onServer('noose:updateTarget', (targetx, targety, targetz, name) => {
+    native.setBlipCoords(targetBlip, targetx, targety, targetz);
+
+    native.setNewWaypoint(targetx, targety);
+    native.setNewWaypoint(x, y);
 });
 
 alt.onServer('noose:finished', () => {
     if (targetBlip == undefined) {
         return;
     }
-
-    noosefinished = true;
+    targetBlip.destroy();
+    targetBlip = null;
 });
 
 alt.everyTick(() => {
@@ -554,18 +549,10 @@ alt.onServer('running:start', () => {
 // alt.onServer('ClientDoorControl', (hashKey, posX, posY, posZ, state, rotX, rotY, rotZ) => {
 //     native.doorControl(hashKey, posX, posY, posZ, state, rotX, rotY, rotZ);
 // });
-let dispalyWeapon;
-alt.onServer('attach', (hash, px, py, pz, rx, ry, rz) => {
-    alt.log('try to attatch');
-    if (dispalyWeapon) {
-        native.deleteEntity(dispalyWeapon);
-    }
-    ///att -739394447 0.1 -0.15 0.35 0 90 0 (Im Rücken)
 
-    dispalyWeapon = native.createObjectNoOffset(hash, alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z, false, true, false);
-    native.attachEntityToEntity(dispalyWeapon, alt.Player.local.scriptID, 0, px, py, pz, rx, ry, rz, false, false, false, true, 0, true);
-    //native.attachEntityToEntity(entity1_number, entity2_number, boneIndex_number, xPos_number, yPos_number, zPos_number, xRot_number, yRot_number, zRot_number, p9_boolean, useSoftPinning_boolean, collision_boolean, isPed_boolean, vertexIndex_number, fixedRot_boolean);
-});
+// alt.onServer('attach', (args) => {
+//     alt.emitServer('attach:return', alt.Player.local.scriptID, args);
+// });
 
 alt.onServer('isinWater', () => {
     alt.log(native.isEntityInWater(alt.Player.local.scriptID));
@@ -574,4 +561,8 @@ alt.onServer('isinWater', () => {
 alt.onServer('tune:veh', (veh, type, index) => {
     native.setVehicleMod(veh, type, index, false);
     alt.log(native.getVehicleMod(veh.scriptID, type));
+});
+
+alt.onServer('heat:toggle', (toggle) => {
+    native.setSeethrough(toggle);
 });

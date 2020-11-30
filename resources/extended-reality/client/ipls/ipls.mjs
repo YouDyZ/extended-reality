@@ -1,6 +1,8 @@
 import * as alt from 'alt';
 import * as native from 'natives';
 
+alt.log('requesting Ipls');
+
 alt.requestIpl('ex_dt1_02_office_02b');
 let coordLoc = native.getInteriorAtCoords(-141.1987, -620.913, 168.8205);
 native.pinInteriorInMemory(coordLoc);
