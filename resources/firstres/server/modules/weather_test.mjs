@@ -59,7 +59,7 @@ setInterval((player) => {
     alt.emitClient(null, 'weather:update', currentWeather_string, nextWetter_string);
     current_weather = nextWetter;
     currentWeather_string = nextWetter_string;
-}, 50000);
+}, 500000);
 
 let now_init = weather.now();
 console.log(now_init);
@@ -86,7 +86,7 @@ setInterval(() => {
     }
 
     alt.emitClient(null, 'time:update', stunde, minute, sekunde);
-    console.log(`${stunde} : ${minute} : ${sekunde}`);
+    //console.log(`${stunde} : ${minute} : ${sekunde}`);
 }, 5000);
 
 chat.registerCmd('time', (player, args) => {

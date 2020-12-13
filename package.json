@@ -16,5 +16,13 @@
   "devDependencies": {
     "@altv/types": "^1.0.19"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YouDyZ/extended-reality.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YouDyZ/extended-reality/issues"
+  },
+  "homepage": "https://github.com/YouDyZ/extended-reality#readme",
   "description": ""
 }

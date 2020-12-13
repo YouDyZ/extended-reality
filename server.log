@@ -1,192 +1,71 @@
-[17:16:50] alt:V Server, build #1286, branch release
-[17:16:50] Starting Extended-Reality on 45.131.108.26:22005
-[17:16:50] Loading resource firstres
-[17:16:50] Loading resource chat
-[17:16:50] Loaded resource chat
-[17:16:50] Loaded resource firstres
-[17:16:50] Loading resource pointing
-[17:16:50] Loaded resource pointing
-[17:16:50] Loading resource extended-reality
-[17:16:51] Loaded resource extended-reality
-[17:16:51] Loading resource extended-map
-[17:16:51] Loaded resource extended-map
-[17:16:51] Loading resource mrpd
-[17:16:51] Loaded resource mrpd
-[17:16:51] Loading resource extended-test
-[17:16:52] Loaded resource extended-test
-[17:16:52] Loading resource club-bahama
-[17:16:52] Loaded resource club-bahama
-[17:16:52] Loading resource hospital-pillbox
-[17:16:52] Loaded resource hospital-pillbox
-[17:16:52] Loading resource haircut_1
-[17:16:52] Loaded resource haircut_1
-[17:16:52] Loading resource Clothes-Menu-master
-[17:16:52] Loaded resource Clothes-Menu-master
-[17:16:52] Starting HTTP server on 45.131.108.26:22005
-[17:16:52] Console thread started (ThreadId: 8680)
-[17:16:52] Main thread started (ThreadId: 6672)
-[17:16:52] Colshape thread started (ThreadId: 4388)
-[17:16:52] EntityStreamer thread started (ThreadId: 2204)
-[17:16:52] Network thread started (ThreadId: 3920)
-[17:16:52] Server started
-[17:17:15][Warning] resourceManager.Update() took: 112 ms
-[17:17:29] [chat:cmd] YouDyZ: /mf m
-[17:17:34] [chat:cmd] YouDyZ: /veh t2ß
-[17:17:34][Error] Failed to create vehicle: 2086777747 is not a proper model hash
-[17:17:37] [chat:cmd] YouDyZ: /veh t20
-[17:18:36] [chat:msg] YouDyZ: ./mf m
-[17:19:53] [chat:msg] YouDyZ: reconnect
-[17:20:22][Warning] resourceManager.Update() took: 101 ms
-[17:21:04][Warning] resourceManager.Update() took: 102 ms
-[17:21:11][Warning] resourceManager.Update() took: 102 ms
-[17:21:27] [chat:msg] YouDyZ: ./mf m
-[17:21:42] [chat:cmd] YouDyZ: /giveall
-[17:21:54] [chat:cmd] Player: /mf m
-[17:22:04] [chat:msg] YouDyZ: ./giveall
-[17:22:10] [chat:cmd] Player: /veh frogger
-[17:23:17] [chat:cmd] YouDyZ: /noose
-[17:23:25] [chat:cmd] YouDyZ: /time 0 0 0
-[17:23:38] [chat:cmd] YouDyZ: /noose
-[17:24:24] [chat:cmd] YouDyZ: /admin
-[17:24:26] [chat:cmd] YouDyZ: /god
-[17:25:01] [chat:cmd] YouDyZ: /admin
-[17:25:02] [chat:cmd] YouDyZ: /admin
-[17:25:04] [chat:cmd] Player: /giveall
-[17:25:05] [chat:msg] YouDyZ: ./admin
-[17:25:07] [chat:msg] YouDyZ: ./god
-[17:26:02] [chat:msg] YouDyZ: ./tpwp
-[17:26:09] [chat:cmd] Player: /tpwp
-[17:26:15] [chat:cmd] YouDyZ: /listall
-[17:26:21] [chat:msg] YouDyZ: ./tpwo 0
-[17:26:27] [chat:msg] YouDyZ: ./tpto 0
-[17:27:44] [chat:cmd] Player: /tpwp
-[17:27:59] [chat:cmd] Player: /tpwp
-[17:28:03] [chat:cmd] YouDyZ: /veh sanchez
-[17:28:54] [chat:cmd] Player: /veh sanchez
-[17:32:05] [chat:cmd] Player: /veh frogger
-[17:32:52] [chat:cmd] YouDyZ: /att -739394447 0.1 -0.15 0.35 0 90 0
-[17:33:00] [chat:cmd] YouDyZ: /att -739394447
-[17:37:13] [chat:cmd] YouDyZ: /veh pfister
-[17:37:13][Error] Failed to create vehicle: 1427595648 is not a proper model hash
-[17:37:21] [chat:cmd] YouDyZ: /veh phister
-[17:37:21][Error] Failed to create vehicle: 972117166 is not a proper model hash
-[17:37:31] [chat:cmd] YouDyZ: /veh phista
-[17:37:31][Error] Failed to create vehicle: 4064496391 is not a proper model hash
-[17:37:35] [chat:cmd] YouDyZ: /veh pfista
-[17:37:35][Error] Failed to create vehicle: 3749746388 is not a proper model hash
-[17:37:38] [chat:cmd] YouDyZ: /veh pfister
-[17:37:38][Error] Failed to create vehicle: 1427595648 is not a proper model hash
-[17:38:08] [chat:cmd] YouDyZ: /veh pfister
-[17:38:08][Error] Failed to create vehicle: 1427595648 is not a proper model hash
-[17:38:19] [chat:cmd] YouDyZ: /veh pfister
-[17:38:19][Error] Failed to create vehicle: 1427595648 is not a proper model hash
-[17:38:32] [chat:cmd] YouDyZ: /veh meteor
-[17:39:00] [chat:cmd] YouDyZ: /veh meteor
-[17:39:14] [chat:cmd] YouDyZ: /veh meteor
-[17:39:20] [chat:cmd] Player: /admin
-[17:39:27] [chat:cmd] Player: /god
-[17:40:05] [chat:cmd] YouDyZ: /veh meteor
-[17:40:57] [chat:cmd] YouDyZ: /veh tribike
-[17:41:35] [chat:cmd] YouDyZ: /veh meteor
-[17:43:12] [chat:cmd] YouDyZ: /mf f
-[17:43:42] [chat:cmd] YouDyZ: /giveall
-[17:43:47] [chat:cmd] Player: /veh neon
-[17:43:49] [chat:cmd] YouDyZ: /god
-[17:43:49] [chat:cmd] YouDyZ: /god
-[17:44:10] [chat:cmd] Player: /veh neon
-[17:45:08] [chat:cmd] YouDyZ: /tpto 2
-[17:46:49] [chat:cmd] YouDyZ: /charedit on
-[17:48:27] [chat:cmd] YouDyZ: /time now
-[17:48:34] [chat:cmd] YouDyZ: /timenow
-[17:48:41] [chat:cmd] YouDyZ: /time 12 0 0
-[17:51:31] [chat:cmd] YouDyZ: /tpwp
-[17:51:42] [chat:cmd] YouDyZ: /Farm
-[17:51:45] [chat:cmd] YouDyZ: /farm
-[17:51:47] [chat:msg] YouDyZ: ./farm
-[17:51:49] [chat:cmd] Player: /veh frogger
-[17:53:06] [chat:cmd] Player: /giveall
-[17:53:08] [chat:cmd] YouDyZ: /tpto 2
-[17:54:12] [chat:cmd] YouDyZ: /pos
-[17:54:39] [chat:cmd] YouDyZ: /removeipl smboat all
-[17:54:50] [chat:cmd] YouDyZ: /addipl smboat all
-[17:55:05] [chat:cmd] YouDyZ: /removeipl smboat all
-[17:55:16] [chat:cmd] YouDyZ: /removeipl hei_yacht_heist all
-[17:55:23] [chat:cmd] YouDyZ: /addipl hei_yacht_heist all
-[17:55:36] [chat:cmd] YouDyZ: /addipl hei_yacht_heist_enginrm all
-[17:55:44] [chat:cmd] YouDyZ: /addipl hei_yacht_heist_Lounge all
-[17:55:51] [chat:cmd] YouDyZ: /addipl hei_yacht_heist_Bridge all
-[17:56:07] [chat:cmd] YouDyZ: /addipl hei_yacht_heist_Bar all
-[17:56:16] [chat:cmd] YouDyZ: /addipl hei_yacht_heist_Bedrm all
-[17:56:25] [chat:cmd] YouDyZ: /addipl hei_yacht_heist_DistantLights all
-[17:56:44] [chat:cmd] YouDyZ: /addipl hei_yacht_heist_LODLights all
-[17:59:03] [chat:cmd] YouDyZ: /tpto 2
-[17:59:27] [chat:cmd] YouDyZ: /tpto 2
-[18:00:44] [chat:cmd] YouDyZ: /tpto 2
-[18:02:47] [chat:cmd] YouDyZ: /all
-[18:02:50] [chat:cmd] Player: /god
-[18:02:51] [chat:cmd] YouDyZ: /god
-[18:03:01] [chat:cmd] YouDyZ: /mf m
-[18:03:27] [chat:cmd] YouDyZ: /giveall
-[18:04:10] [chat:cmd] Player: /tpto 0
-[18:04:16] [chat:cmd] Player: /tpto 0
-[18:05:02] [chat:cmd] YouDyZ: /tpto 2
-[18:05:08] [chat:cmd] Player: /tpto 0
-[18:07:24] [chat:cmd] YouDyZ: /tpto 0
-[18:07:26] [chat:cmd] YouDyZ: /tpto 2
-[18:07:43] [chat:cmd] YouDyZ: /skin crow
-[18:08:35] [chat:cmd] YouDyZ: /skin a_c_crow
-[18:08:46] [chat:cmd] YouDyZ: /tpto 2
-[18:08:57] [chat:cmd] YouDyZ: /god
-[18:09:12] [chat:cmd] YouDyZ: /giveall
-[18:10:04] [chat:cmd] YouDyZ: /tpto 2
-[18:10:12] [chat:cmd] YouDyZ: /skin a_c_crow
-[18:10:24] [chat:cmd] YouDyZ: /giveall
-[18:11:02] [chat:cmd] Player: /god
-[18:12:08] [chat:cmd] YouDyZ: /tpto 2
-[18:12:25] [chat:cmd] YouDyZ: /skin a_c_crow
-[18:12:38] [chat:cmd] YouDyZ: /skin a_m_m_acult_01
-[18:13:06] [chat:cmd] YouDyZ: /skin a_m_y_acult_01
-[18:14:07] [chat:cmd] YouDyZ: /skin a_m_m_acult_01
-[18:14:17] [chat:cmd] YouDyZ: /giveall
-[18:14:25] [chat:cmd] YouDyZ: /god
-[18:14:26] [chat:cmd] YouDyZ: /god#
-[18:14:28] [chat:cmd] YouDyZ: /god
-[18:14:42] [chat:cmd] YouDyZ: /mf m
-[18:14:47] [chat:cmd] YouDyZ: /god
-[18:14:47] [chat:cmd] YouDyZ: /god
-[18:14:50] [chat:cmd] YouDyZ: /giveall
-[18:15:52] [chat:cmd] YouDyZ: /skin a_c_retriever
-[18:16:22] [chat:cmd] YouDyZ: /skin a_m_y_gay_01
-[18:16:48] [chat:cmd] YouDyZ: /veh hydra
-[18:16:51] [chat:cmd] YouDyZ: /veh hydra
-[18:16:55] [chat:cmd] YouDyZ: /veh hydra
-[18:17:29] [chat:cmd] YouDyZ: /veh hydra
-[18:17:56] [chat:cmd] YouDyZ: /veh a_c_chop
-[18:17:56][Error] Failed to create vehicle: 351016938 is not a proper model hash
-[18:18:00] [chat:cmd] YouDyZ: /skin a_c_chop
-[18:21:38] [chat:cmd] Player: /veh deluxo
-[18:23:28] [chat:msg] YouDyZ: {FF0000} Quatsche mit nen Kumpel
-[18:24:52] [chat:cmd] YouDyZ: /listall
-[14:59:27] Stopping resource extended-reality
-[14:59:27] Stopped resource extended-reality
-[14:59:27] Stopping resource firstres
-[14:59:27] Stopped resource firstres
-[14:59:27] Stopping resource extended-test
-[14:59:27] Stopped resource extended-test
-[14:59:27] Stopping resource chat
-[14:59:27] Stopped resource chat
-[14:59:27] Stopping resource extended-map
-[14:59:27] Stopped resource extended-map
-[14:59:27] Stopping resource pointing
-[14:59:27] Stopped resource pointing
-[14:59:27] Stopping resource mrpd
-[14:59:27] Stopped resource mrpd
-[14:59:27] Stopping resource club-bahama
-[14:59:27] Stopped resource club-bahama
-[14:59:27] Stopping resource hospital-pillbox
-[14:59:27] Stopped resource hospital-pillbox
-[14:59:27] Stopping resource haircut_1
-[14:59:27] Stopped resource haircut_1
-[14:59:27] Stopping resource Clothes-Menu-master
-[14:59:27] Stopped resource Clothes-Menu-master
-[14:59:27] Server shutdown
+[18:14:48] alt:V Server, build #1301, branch release
+[18:14:48] Starting Extended-Reality on 185.150.26.211:22005
+[18:14:48] Loading resource firstres
+[18:14:48] Loading resource chat
+[18:14:48] Loaded resource chat
+[18:14:48] Loaded resource firstres
+[18:14:48] Loading resource pointing
+[18:14:48] Loaded resource pointing
+[18:14:48] Loading resource extended-reality
+[18:14:50] Loaded resource extended-reality
+[18:14:50] Loading resource extended-map
+[18:14:50] Loaded resource extended-map
+[18:14:50] Loading resource mrpd
+[18:14:51] Loaded resource mrpd
+[18:14:51] Loading resource extended-test
+[18:14:52] Loaded resource extended-test
+[18:14:52] Loading resource club-bahama
+[18:14:52] Loaded resource club-bahama
+[18:14:52] Loading resource hospital-pillbox
+[18:14:52] Loaded resource hospital-pillbox
+[18:14:52] Loading resource haircut_1
+[18:14:52] Loaded resource haircut_1
+[18:14:52] Loading resource Clothes-Menu-master
+[18:14:52] Loaded resource Clothes-Menu-master
+[18:14:52] Loading resource mclaren
+[18:14:53] Loaded resource mclaren
+[18:14:53] Loading resource porsche
+[18:14:56] Loaded resource porsche
+[18:14:56] Starting HTTP server on 185.150.26.211:22005
+[18:14:56] Console thread started (ThreadId: 3108)
+[18:14:56] Main thread started (ThreadId: 4956)
+[18:14:56] Colshape thread started (ThreadId: 3304)
+[18:14:56] EntityStreamer thread started (ThreadId: 6800)
+[18:14:56] Network thread started (ThreadId: 6628)
+[18:14:56] Server started
+[18:14:56][Warning] resourceManager.Update() took: 218 ms
+[18:16:30][Warning] resourceManager.Update() took: 127 ms
+[18:16:30][Warning] resourceManager.Update() took: 97 ms
+[18:16:35] [chat:cmd] YouDyZ: /admin
+[18:16:35][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 14ms
+[18:16:37] [chat:cmd] YouDyZ: /god
+[18:16:37][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 8ms
+[18:16:40] [chat:cmd] YouDyZ: /veh senna
+[18:16:40][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 17ms
+[18:17:02] Stopping resource extended-reality
+[18:17:02] Stopped resource extended-reality
+[18:17:02] Stopping resource firstres
+[18:17:02] Stopped resource firstres
+[18:17:02] Stopping resource extended-test
+[18:17:02] Stopped resource extended-test
+[18:17:02] Stopping resource chat
+[18:17:02] Stopped resource chat
+[18:17:02] Stopping resource extended-map
+[18:17:02] Stopped resource extended-map
+[18:17:02] Stopping resource pointing
+[18:17:02] Stopped resource pointing
+[18:17:02] Stopping resource mrpd
+[18:17:02] Stopped resource mrpd
+[18:17:02] Stopping resource club-bahama
+[18:17:02] Stopped resource club-bahama
+[18:17:02] Stopping resource hospital-pillbox
+[18:17:02] Stopped resource hospital-pillbox
+[18:17:02] Stopping resource haircut_1
+[18:17:02] Stopped resource haircut_1
+[18:17:02] Stopping resource Clothes-Menu-master
+[18:17:02] Stopped resource Clothes-Menu-master
+[18:17:02] Stopping resource mclaren
+[18:17:02] Stopped resource mclaren
+[18:17:02] Stopping resource porsche
+[18:17:02] Stopped resource porsche
+[18:17:02] Server shutdown

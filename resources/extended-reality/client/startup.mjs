@@ -16,14 +16,3 @@ import * as statistic from './statistic/statistic.mjs';
 import * as attachment from './attachment/attachment.mjs';
 import * as admin from './admin/admin.mjs';
 
-alt.onServer('vanish', (toggle) => {
-    alt.log(toggle);
-    if (toggle == true) {
-        native.setEntityAlpha(alt.Player.local.ScriptID, 255, true);
-        return;
-    } else if (toggle == false) {
-        native.setEntityAlpha(alt.Player.local.ScriptID, 0, true);
-        return;
-    }
-    alt.log('error');
-});
