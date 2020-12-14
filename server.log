@@ -1,71 +1,77 @@
-[18:14:48] alt:V Server, build #1301, branch release
-[18:14:48] Starting Extended-Reality on 185.150.26.211:22005
-[18:14:48] Loading resource firstres
-[18:14:48] Loading resource chat
-[18:14:48] Loaded resource chat
-[18:14:48] Loaded resource firstres
-[18:14:48] Loading resource pointing
-[18:14:48] Loaded resource pointing
-[18:14:48] Loading resource extended-reality
-[18:14:50] Loaded resource extended-reality
-[18:14:50] Loading resource extended-map
-[18:14:50] Loaded resource extended-map
-[18:14:50] Loading resource mrpd
-[18:14:51] Loaded resource mrpd
-[18:14:51] Loading resource extended-test
-[18:14:52] Loaded resource extended-test
-[18:14:52] Loading resource club-bahama
-[18:14:52] Loaded resource club-bahama
-[18:14:52] Loading resource hospital-pillbox
-[18:14:52] Loaded resource hospital-pillbox
-[18:14:52] Loading resource haircut_1
-[18:14:52] Loaded resource haircut_1
-[18:14:52] Loading resource Clothes-Menu-master
-[18:14:52] Loaded resource Clothes-Menu-master
-[18:14:52] Loading resource mclaren
-[18:14:53] Loaded resource mclaren
-[18:14:53] Loading resource porsche
-[18:14:56] Loaded resource porsche
-[18:14:56] Starting HTTP server on 185.150.26.211:22005
-[18:14:56] Console thread started (ThreadId: 3108)
-[18:14:56] Main thread started (ThreadId: 4956)
-[18:14:56] Colshape thread started (ThreadId: 3304)
-[18:14:56] EntityStreamer thread started (ThreadId: 6800)
-[18:14:56] Network thread started (ThreadId: 6628)
-[18:14:56] Server started
-[18:14:56][Warning] resourceManager.Update() took: 218 ms
-[18:16:30][Warning] resourceManager.Update() took: 127 ms
-[18:16:30][Warning] resourceManager.Update() took: 97 ms
-[18:16:35] [chat:cmd] YouDyZ: /admin
-[18:16:35][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 14ms
-[18:16:37] [chat:cmd] YouDyZ: /god
-[18:16:37][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 8ms
-[18:16:40] [chat:cmd] YouDyZ: /veh senna
-[18:16:40][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 17ms
-[18:17:02] Stopping resource extended-reality
-[18:17:02] Stopped resource extended-reality
-[18:17:02] Stopping resource firstres
-[18:17:02] Stopped resource firstres
-[18:17:02] Stopping resource extended-test
-[18:17:02] Stopped resource extended-test
-[18:17:02] Stopping resource chat
-[18:17:02] Stopped resource chat
-[18:17:02] Stopping resource extended-map
-[18:17:02] Stopped resource extended-map
-[18:17:02] Stopping resource pointing
-[18:17:02] Stopped resource pointing
-[18:17:02] Stopping resource mrpd
-[18:17:02] Stopped resource mrpd
-[18:17:02] Stopping resource club-bahama
-[18:17:02] Stopped resource club-bahama
-[18:17:02] Stopping resource hospital-pillbox
-[18:17:02] Stopped resource hospital-pillbox
-[18:17:02] Stopping resource haircut_1
-[18:17:02] Stopped resource haircut_1
-[18:17:02] Stopping resource Clothes-Menu-master
-[18:17:02] Stopped resource Clothes-Menu-master
-[18:17:02] Stopping resource mclaren
-[18:17:02] Stopped resource mclaren
-[18:17:02] Stopping resource porsche
-[18:17:02] Stopped resource porsche
-[18:17:02] Server shutdown
+[09:24:28] alt:V Server, build #1301, branch release
+[09:24:28] Starting Extended-Reality on 185.150.26.211:22005
+[09:24:28] Loading resource firstres
+[09:24:28] Loading resource chat
+[09:24:28] Loaded resource chat
+[09:24:28] Loaded resource firstres
+[09:24:28] Loading resource pointing
+[09:24:28] Loaded resource pointing
+[09:24:28] Loading resource extended-reality
+[09:24:30] Loaded resource extended-reality
+[09:24:30] Loading resource extended-map
+[09:24:30] Loaded resource extended-map
+[09:24:30] Loading resource mrpd
+[09:24:30] Loaded resource mrpd
+[09:24:30] Loading resource extended-test
+[09:24:31] Loaded resource extended-test
+[09:24:31] Loading resource club-bahama
+[09:24:31] Loaded resource club-bahama
+[09:24:31] Loading resource hospital-pillbox
+[09:24:31] Loaded resource hospital-pillbox
+[09:24:31] Loading resource haircut_1
+[09:24:31] Loaded resource haircut_1
+[09:24:31] Loading resource Clothes-Menu-master
+[09:24:31] Loaded resource Clothes-Menu-master
+[09:24:31] Loading resource vw
+[09:24:31][Warning] Unknown vehicle type VEHICLE_TYPE_CLASS
+[09:24:33] Loaded resource vw
+[09:24:33] Starting HTTP server on 185.150.26.211:22005
+[09:24:33] Console thread started (ThreadId: 1956)
+[09:24:33] Main thread started (ThreadId: 6380)
+[09:24:33] Colshape thread started (ThreadId: 2912)
+[09:24:33] EntityStreamer thread started (ThreadId: 528)
+[09:24:33] Network thread started (ThreadId: 1632)
+[09:24:33] Server started
+[09:26:14][Warning] resourceManager.Update() took: 122 ms
+[09:26:14][Warning] resourceManager.Update() took: 92 ms
+[09:26:23] [chat:cmd] YouDyZ: /admin
+[09:26:23][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 15ms
+[09:26:25] [chat:cmd] YouDyZ: /god
+[09:26:25][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 14ms
+[09:26:29] [chat:cmd] YouDyZ: /veh CAYENNE
+[09:26:29][Error] Failed to create vehicle: 2912131727 is not a proper model hash
+[09:26:29][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 16ms
+[09:26:37] [chat:cmd] YouDyZ: /veh amarok
+[09:26:37][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 11ms
+[09:28:17] [chat:cmd] YouDyZ: /veh fulux63
+[09:28:17][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 11ms
+[09:28:45] [chat:cmd] YouDyZ: /veh golfmk6
+[09:28:45][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 15ms
+[09:29:24] [chat:cmd] YouDyZ: /veh vwr
+[09:29:54] [chat:cmd] YouDyZ: /veh polo05
+[09:29:54][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 12ms
+[09:38:50] Stopping resource extended-reality
+[09:38:50] Stopped resource extended-reality
+[09:38:50] Stopping resource firstres
+[09:38:50] Stopped resource firstres
+[09:38:50] Stopping resource extended-test
+[09:38:50] Stopped resource extended-test
+[09:38:50] Stopping resource chat
+[09:38:50] Stopped resource chat
+[09:38:50] Stopping resource extended-map
+[09:38:50] Stopped resource extended-map
+[09:38:50] Stopping resource pointing
+[09:38:50] Stopped resource pointing
+[09:38:50] Stopping resource mrpd
+[09:38:50] Stopped resource mrpd
+[09:38:50] Stopping resource club-bahama
+[09:38:50] Stopped resource club-bahama
+[09:38:50] Stopping resource hospital-pillbox
+[09:38:50] Stopped resource hospital-pillbox
+[09:38:50] Stopping resource haircut_1
+[09:38:50] Stopped resource haircut_1
+[09:38:50] Stopping resource Clothes-Menu-master
+[09:38:50] Stopped resource Clothes-Menu-master
+[09:38:50] Stopping resource vw
+[09:38:50] Stopped resource vw
+[09:38:50] Server shutdown

@@ -5,7 +5,7 @@
     <Item type="CHandlingData">
       <handlingName>CAYENNE</handlingName>
       <fMass value="2400.000000" />
-      <fInitialDragCoeff value="6.000000" />
+      <fInitialDragCoeff value="4.000000" />
       <fPercentSubmerged value="85.000000" />
       <vecCentreOfMassOffset x="0.000000" y="0.100000" z="0.000000" />
       <vecInertiaMultiplier x="1.200000" y="1.200000" z="1.300000" />
@@ -13,9 +13,9 @@
       <nInitialDriveGears value="5" />
       <fInitialDriveForce value="0.190000" />
       <fDriveInertia value="1.000000" />
-      <fClutchChangeRateScaleUpShift value="1.800000" />
-      <fClutchChangeRateScaleDownShift value="1.800000" />
-      <fInitialDriveMaxFlatVel value="139.000000" />
+      <fClutchChangeRateScaleUpShift value="5.800000" />
+      <fClutchChangeRateScaleDownShift value="5.800000" />
+      <fInitialDriveMaxFlatVel value="289.000000" />
       <fBrakeForce value="0.250000" />
       <fBrakeBiasFront value="0.650000" />
       <fHandBrakeForce value="0.450000" />
