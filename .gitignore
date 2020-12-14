@@ -7,3 +7,10 @@ startserver.cmd
 *.resource
 
 crashdumps/*
+
+server.log
+server.cfg
+server.cfg
+server.log
+resources/extended-reality/server/datenbank/database.mjs
+resources/extended-reality/server/datenbank/database.mjs

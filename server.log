@@ -1,70 +1,35 @@
-[15:57:27] alt:V Server, build #1301, branch release
-[15:57:28] Starting Extended-Reality on 185.150.26.211:22005
-[15:57:28] Loading resource firstres
-[15:57:28] Loading resource chat
-[15:57:28] Loaded resource chat
-[15:57:28] Loaded resource firstres
-[15:57:28] Loading resource pointing
-[15:57:28] Loaded resource pointing
-[15:57:28] Loading resource extended-reality
-[15:57:29] Loaded resource extended-reality
-[15:57:29] Loading resource extended-map
-[15:57:30] Loaded resource extended-map
-[15:57:30] Loading resource mrpd
-[15:57:30] Loaded resource mrpd
-[15:57:30] Loading resource extended-test
-[15:57:31] Loaded resource extended-test
-[15:57:31] Loading resource club-bahama
-[15:57:31] Loaded resource club-bahama
-[15:57:31] Loading resource hospital-pillbox
-[15:57:31] Loaded resource hospital-pillbox
-[15:57:31] Loading resource haircut_1
-[15:57:31] Loaded resource haircut_1
-[15:57:31] Loading resource Clothes-Menu-master
-[15:57:31] Loaded resource Clothes-Menu-master
-[15:57:31] Loading resource aston martin
-[15:57:33] Loaded resource aston martin
-[15:57:33] Loading resource renault
-[15:57:34] Loaded resource renault
-[15:57:34] Starting HTTP server on 185.150.26.211:22005
-[15:57:34] Console thread started (ThreadId: 392)
-[15:57:34] Main thread started (ThreadId: 7096)
-[15:57:34] Colshape thread started (ThreadId: 4972)
-[15:57:34] EntityStreamer thread started (ThreadId: 6272)
-[15:57:34] Network thread started (ThreadId: 6824)
-[15:57:34] Server started
-[16:16:25][Warning] resourceManager.Update() took: 55 ms
-[16:39:08][Warning] resourceManager.Update() took: 78 ms
-[16:47:43][Warning] resourceManager.Update() took: 131 ms
-[16:47:43][Warning] resourceManager.Update() took: 95 ms
-[16:47:50] [chat:cmd] YouDyZ: /admin
-[16:47:50][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 13ms
-[16:47:53] [chat:cmd] YouDyZ: /god
-[16:47:53][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 12ms
-[17:02:00] Stopping resource extended-reality
-[17:02:00] Stopped resource extended-reality
-[17:02:00] Stopping resource firstres
-[17:02:00] Stopped resource firstres
-[17:02:00] Stopping resource extended-test
-[17:02:00] Stopped resource extended-test
-[17:02:00] Stopping resource chat
-[17:02:00] Stopped resource chat
-[17:02:00] Stopping resource extended-map
-[17:02:00] Stopped resource extended-map
-[17:02:00] Stopping resource pointing
-[17:02:00] Stopped resource pointing
-[17:02:00] Stopping resource mrpd
-[17:02:00] Stopped resource mrpd
-[17:02:00] Stopping resource club-bahama
-[17:02:00] Stopped resource club-bahama
-[17:02:00] Stopping resource hospital-pillbox
-[17:02:00] Stopped resource hospital-pillbox
-[17:02:00] Stopping resource haircut_1
-[17:02:00] Stopped resource haircut_1
-[17:02:00] Stopping resource Clothes-Menu-master
-[17:02:00] Stopped resource Clothes-Menu-master
-[17:02:00] Stopping resource aston martin
-[17:02:00] Stopped resource aston martin
-[17:02:00] Stopping resource renault
-[17:02:00] Stopped resource renault
-[17:02:00] Server shutdown
+[17:13:29] alt:V Server, build #1301, branch release
+[17:13:29] Starting Extended-Reality on 127.0.0.1:22005
+[17:13:29] Loading resource firstres
+[17:13:29] Loading resource chat
+[17:13:29] Loaded resource chat
+[17:13:29] Loaded resource firstres
+[17:13:29] Loading resource pointing
+[17:13:29] Loaded resource pointing
+[17:13:29] Loading resource extended-reality
+[17:13:30] Loaded resource extended-reality
+[17:13:30] Loading resource extended-map
+[17:13:30] Loaded resource extended-map
+[17:13:30] Loading resource mrpd
+[17:13:30] Loaded resource mrpd
+[17:13:30] Loading resource extended-test
+[17:13:30] Loaded resource extended-test
+[17:13:30] Loading resource club-bahama
+[17:13:30] Loaded resource club-bahama
+[17:13:30] Loading resource hospital-pillbox
+[17:13:30] Loaded resource hospital-pillbox
+[17:13:30] Loading resource haircut_1
+[17:13:30] Loaded resource haircut_1
+[17:13:30] Loading resource Clothes-Menu-master
+[17:13:30] Loaded resource Clothes-Menu-master
+[17:13:30] Loading resource aston martin
+[17:13:31] Loaded resource aston martin
+[17:13:31] Loading resource renault
+[17:13:31] Loaded resource renault
+[17:13:31] Starting HTTP server on 127.0.0.1:22005
+[17:13:31] Console thread started (ThreadId: 11972)
+[17:13:31] Main thread started (ThreadId: 12788)
+[17:13:31] Colshape thread started (ThreadId: 10236)
+[17:13:31] EntityStreamer thread started (ThreadId: 8292)
+[17:13:31] Network thread started (ThreadId: 10868)
+[17:13:31] Server started

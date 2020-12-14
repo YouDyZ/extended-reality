@@ -11,5 +11,5 @@ mongoose
     .then((con) => {
         //console.log(con.connections);
         connection = con;
-        console.log('\x1b[32m', `I am connected to the database: §${connection}`);
+        console.log('\x1b[32m', `I am connected to the database!}`);
     });
