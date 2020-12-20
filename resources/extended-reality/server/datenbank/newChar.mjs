@@ -14,6 +14,7 @@ alt.onClient('database:newChar', (player, newChar) => {
         return '';
     }
 };
+    //test for Bot
 
     newChar.forname = capitalizeString(newChar.forname)
     newChar.lastname = capitalizeString(newChar.lastname)
