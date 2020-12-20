@@ -14,7 +14,7 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
-    "@altv/types": "^1.0.19",
+    "@altv/types": "^1.0.22",
     "eslint": "^7.16.0"
   },
   "repository": {
