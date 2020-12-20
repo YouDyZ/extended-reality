@@ -1,39 +1,10 @@
 import * as alt from 'alt';
 import chat from 'chat';
-import mysql from 'mysql';
 import bcrypt from 'bcryptjs';
 import mongoose from 'mongoose';
-
-// const db = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: '7z4G$zJpYYRs',
-//     database: 'roleplay',
-// });
-
-// db.connect((err) => {
-//     if (err) {
-//         throw err;
-//     } else {
-//         console.log('\x1b[32m', `CONNECTTED MYSQL!`);
-//     }
-// });
-
-// const createtable = function () {
-//     let sql =
-//         'CREATE TABLE spieler(id int AUTO_INCREMENT, name VARCHAR(255), social VARCHAR(255), pw VARCHAR(255), whitelisted BOOLEAN, banstate BOOLEAN, banreason VARCHAR(255), forum VARCHAR(255), teamspeak VARCHAR(255), rank INT, uptime INT, maxchars INT, PRIMARY KEY(id))';
-//     db.query(sql, (err, res) => {
-//         if (err) throw err;
-//         console.log(res);
-//     });
-// };
-
-// INSERT INTO spieler (name, social....) VALUES (asdfasdf,.asdfasdf,asdfasdf,-----), (adsf,asdf,asd,fafd);
-
-// createtable();
+import { PlayersModel, PlayerSchema, CharModels } from '../datenbank/modules/exports';
 
 const salt = 10;
-let connection;
 let maxcharchalc = function (rank) {
     if (rank == 0) {
         //normaler Spieler
@@ -56,127 +27,14 @@ let maxcharchalc = function (rank) {
     }
 };
 
-const startall = function (player, rank, playerchars, dbid, dbmaxchars) {
-    let maxchars;
-    if (dbmaxchars == undefined || dbmaxchars == null) {
-        maxchars = maxcharchalc(rank);
-    } else {
-        maxchars = dbmaxchars;
-    }
+const startall = function (player, dbid, rank) {
+    const dbPlayer = PlayersModel.findById(dbid);
 
-    player.setMeta('dbID', dbid);
-    alt.emit('charselect:start', player, playerchars, maxchars);
+    let maxchars = dbPlayer.maxchars || maxcharchalc(rank);
+    player.setSyncedMeta('dbID', `${dbid}`);
+    alt.emit('charselect:start', player.id, maxchars);
     alt.emit('sync');
 };
-
-mongoose
-    .connect('mongodb://localhost:27017/player', {
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-        useCreateIndex: true,
-    })
-    .then((con) => {
-        //console.log(con.connections);
-        connection = con;
-        console.log('\x1b[32m', `I am connected to the database: §${connection}`);
-    });
-
-mongoose.set('useFindAndModify', false);
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-function fnHook(object, name) {
-    (function (fn) {
-        object[name] = async function () {
-            await sleep(0);
-            return fn.apply(this, arguments);
-        };
-    })(object[name]);
-}
-
-const modelFunctions = ['deleteMany', 'deleteOne', 'find', 'findById', 'findByIdAndDelete', 'findByIdAndRemove', 'findByIdAndRemove', 'findByIdAndUpdate', 'findByIdAndUpdate', 'findOne', 'findOneAndDelete', 'findOneAndRemove', 'findOneAndUpdate', 'replaceOne', 'updateMany', 'updateOne', 'save'];
-
-const prototypeFunctions = ['delete', 'deleteOne', 'increment', 'remove', 'save'];
-
-for (let i = 0; i < modelFunctions.length; i++) fnHook(mongoose.Model, modelFunctions[i]);
-for (let i = 0; i < prototypeFunctions.length; i++) fnHook(mongoose.Model.prototype, prototypeFunctions[i]);
-
-/**
- * PlayerSchema
- * generiert das schmea wie es in der DB gespeichert wird.
- *
- */
-
-let PlayerSchema = new mongoose.Schema(
-    {
-        name: {
-            type: String,
-            unique: true,
-            required: [true, 'Du brauchst einen Namen'],
-        },
-        social: {
-            type: String,
-            unique: true,
-            required: [true, 'Du brauchst eine SocialID'],
-        },
-        pw: {
-            type: String,
-            required: false,
-        },
-        whitelisted: {
-            type: Boolean,
-            default: false,
-            required: true,
-        },
-        character: {
-            type: Array,
-            required: true,
-            default: [],
-        },
-        banstate: {
-            type: Array,
-        },
-        seasonid: {
-            type: Number,
-        },
-        forum: {
-            type: String,
-            required: [true, 'Du musst dein Forumname angeben.'],
-            unique: [true, 'Der Name ist bereits Registriert'],
-        },
-        teamspeak: {
-            type: String,
-            required: [true, 'Du brauchst deine TeamspeakID'],
-            unique: [true, 'Diese TeamspeakID ist bereits registriert!'],
-        },
-        rank: {
-            type: Number,
-            required: true,
-            default: 0,
-            //normal: 0, supporter: 1, Admin: 2, Leitung: 3, PL: 4
-        },
-        uptime: {
-            type: Number,
-            required: true,
-            default: 0,
-        },
-        lastseen: {
-            type: Date,
-        },
-        maxchars: {
-            type: Number,
-        },
-    },
-    { autoCreate: true }
-);
-/*
-    let name = document.getElementById('name').value;
-    let forum = document.getElementById('forum').value;
-    let pw = document.getElementById('password').value;
-    let teamspeak = document.getElementById('teamspeak').value;
-    let confirm = document.getElementById('confirm').value;
-*/
-const PlayersModel = mongoose.model('player', PlayerSchema);
 
 alt.on('playerConnect', (player) => {
     alt.emitClient(player, 'list:socialclub');
@@ -284,7 +142,8 @@ alt.onClient('login:checkdata', (player, social, pw) => {
                         z: -72.6951904296875,
                     };
                     chat.send(player, 'Spawned sucsessfull!');
-                    startall(player, found.rank, found.character, found._id, found.dbmaxchars);
+                    console.log(JSON.stringify(found._id));
+                    startall(player, found._id, found.rank);
                     PlayersModel.updateOne({ social: social }, { lastseen: Date.now() })
                         .then(chat.send(player, 'daten Aktuallisiert'))
                         .catch((err) => chat.send(player, err));
@@ -413,21 +272,6 @@ alt.onClient('update:senddata', (player, name, forum, pw, teamspeak, social) => 
 });
 
 // Database Events
-
-alt.onClient('database:newChar', (player, newChar) => {
-    alt.log(newChar);
-    alt.log(typeof newChar);
-    let sc = player.getMeta('socialclub');
-    PlayersModel.findOneAndUpdate({ social: sc }, { $push: { character: newChar[0] } }, function (err, res) {
-        if (err) {
-            alt.emitClient(player, 'charedit:saveError', err);
-        } else {
-            alt.emitClient(player, 'charedit:hide');
-            alt.emitClient(player, 'charselect:regenerate', res.character, maxcharchalc());
-            player.setMeta('usedCharedit', true);
-        }
-    });
-});
 
 alt.onClient('charselect:finished', (player, selected) => {
     console.log(player.getMeta('dbID'));

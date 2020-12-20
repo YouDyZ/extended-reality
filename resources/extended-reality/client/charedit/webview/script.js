@@ -43,6 +43,7 @@ alt.on('gender:result', (getGender) => {
         gender = 'male';
         globalApi = apiM;
     }
+    initalLoad();
 });
 
 const emitUpdate = function (component, draw, texture) {
@@ -323,6 +324,8 @@ window.addEventListener('load', function () {
     watchestexture = document.getElementById('watchestexture');
     braceletstexture = document.getElementById('braceletstexture');
 
+    initalLoad();
+
     rotation.addEventListener('input', function () {
         let rot = parseInt(rotation.value);
         alt.emit('charedit:rotation', rot);
@@ -343,6 +346,8 @@ window.addEventListener('load', function () {
         globalApi = apiF;
 
         emitUpdate('gender', 'female');
+
+        initalLoad('female');
     });
 
     genderbuttonM.addEventListener('click', function () {
@@ -350,6 +355,7 @@ window.addEventListener('load', function () {
         globalApi = apiM;
 
         emitUpdate('gender', 'male');
+        initalLoad('male');
     });
 
     maskDraw.addEventListener('input', function () {
@@ -6795,7 +6801,98 @@ const braceletstextureprev = function () {
 };
 
 let finish = function () {
-    let all = [maskDraw, maskTexture, hairDraw, legsDraw, legsTexture, shoesDraw, shoesTexture, accessoriesDraw, accessoriesTexture, undershirtDraw, undershirtTexture, decalsDraw, decalsTexture, topsDraw, topsTexture, blemishes, blemishesOpacity, facialHair, facialHairOpacity, eyebrows, eyebrowsOpacity, ageing, ageingOpacity, makeup, makeupOpacity, blush, blushOpacity, complexion, complexionOpacity, sunDamage, sunDamageOpacity, lipstick, lipstickOpacity, freckles, frecklesOpacity, chestHair, chestHairOpacity, bodyBlemishes, bodyBlemishesOpacity, addbodyBlemishes, addbodyBlemishesOpacity, primaryColor, colorHighlight, eyeColor, eyebrowsprimary, eyebrowshighlight, chesthairprimary, chesthairhighlight, blushprimary, blushhighlight, beardprimary, beardhighlight, lipstickprimary, lipstickhighlight, shapefather, shapemother, shapemix, skinfather, skinmother, skinmix, nosewidth, noseheigh, noselength, noseback, nosetip, nosebridge, browheight, browwidth, cheekbonesheight, cheekboneswidth, cheekwidth, eyelid, lips, jawwidth, jawheight, chinlength, chinpos, chinwidth, chinshape, neckwidth, hatsdraw, hatstexture, glassesdraw, glassestexture, earsdraw, earstexture, watchesdraw, watchestexture, braceletsdraw, braceletstexture];
+    let all = [
+        maskDraw,
+        maskTexture,
+        hairDraw,
+        legsDraw,
+        legsTexture,
+        shoesDraw,
+        shoesTexture,
+        accessoriesDraw,
+        accessoriesTexture,
+        undershirtDraw,
+        undershirtTexture,
+        decalsDraw,
+        decalsTexture,
+        topsDraw,
+        topsTexture,
+        blemishes,
+        blemishesOpacity,
+        facialHair,
+        facialHairOpacity,
+        eyebrows,
+        eyebrowsOpacity,
+        ageing,
+        ageingOpacity,
+        makeup,
+        makeupOpacity,
+        blush,
+        blushOpacity,
+        complexion,
+        complexionOpacity,
+        sunDamage,
+        sunDamageOpacity,
+        lipstick,
+        lipstickOpacity,
+        freckles,
+        frecklesOpacity,
+        chestHair,
+        chestHairOpacity,
+        bodyBlemishes,
+        bodyBlemishesOpacity,
+        addbodyBlemishes,
+        addbodyBlemishesOpacity,
+        primaryColor,
+        colorHighlight,
+        eyeColor,
+        eyebrowsprimary,
+        eyebrowshighlight,
+        chesthairprimary,
+        chesthairhighlight,
+        blushprimary,
+        blushhighlight,
+        beardprimary,
+        beardhighlight,
+        lipstickprimary,
+        lipstickhighlight,
+        shapefather,
+        shapemother,
+        shapemix,
+        skinfather,
+        skinmother,
+        skinmix,
+        nosewidth,
+        noseheigh,
+        noselength,
+        noseback,
+        nosetip,
+        nosebridge,
+        browheight,
+        browwidth,
+        cheekbonesheight,
+        cheekboneswidth,
+        cheekwidth,
+        eyelid,
+        lips,
+        jawwidth,
+        jawheight,
+        chinlength,
+        chinpos,
+        chinwidth,
+        chinshape,
+        neckwidth,
+        hatsdraw,
+        hatstexture,
+        glassesdraw,
+        glassestexture,
+        earsdraw,
+        earstexture,
+        watchesdraw,
+        watchestexture,
+        braceletsdraw,
+        braceletstexture,
+    ];
 
     let allValue = [];
 
@@ -6833,6 +6930,266 @@ let finish = function () {
     }
 };
 
+let prefill = () => {
+    maskDraw.value = 1;
+    maskTexture.value = 1;
+    hairDraw.value = 1;
+    legsDraw.value = 1;
+    legsTexture.value = 1;
+    shoesDraw.value = 1;
+    shoesTexture.value = 1;
+    accessoriesDraw.value = 1;
+    accessoriesTexture.value = 1;
+    undershirtDraw.value = 1;
+    undershirtTexture.value = 1;
+    decalsDraw.value = 1;
+    decalsTexture.value = 1;
+    topsDraw.value = 1;
+    topsTexture.value = 1;
+    blemishes.value = 1;
+    blemishesOpacity.value = 0;
+    facialHair.value = 1;
+    facialHairOpacity.value = 0;
+    eyebrows.value = 1;
+    eyebrowsOpacity.value = 0;
+    ageing.value = 1;
+    ageingOpacity.value = 0;
+    makeup.value = 1;
+    makeupOpacity.value = 0;
+    blush.value = 1;
+    blushOpacity.value = 0;
+    complexion.value = complexionOpacity.value = 0;
+    sunDamage.value = sunDamageOpacity.value = 0;
+    lipstick.value = lipstickOpacity.value = 0;
+    freckles.value = frecklesOpacity.value = 0;
+    chestHair.value = chestHairOpacity.value = 0;
+    bodyBlemishes.value = bodyBlemishesOpacity.value = 0;
+    addbodyBlemishes.value = addbodyBlemishesOpacity.value = 0;
+    primaryColor.value = 1;
+    colorHighlight.value = 1;
+    eyeColor.value = 1;
+    eyebrowsprimary.value = 1;
+    eyebrowshighlight.value = 1;
+    chesthairprimary.value = 1;
+    chesthairhighlight.value = 1;
+    blushprimary.value = 1;
+    blushhighlight.value = 1;
+    beardprimary.value = 1;
+    beardhighlight.value = 1;
+    lipstickprimary.value = 1;
+    lipstickhighlight.value = 1;
+    shapefather.value = 1;
+    shapemother.value = 1;
+    shapemix.value = 50;
+    skinfather.value = 1;
+    skinmother.value = 1;
+    skinmix.value = 50;
+    nosewidth.value = 100;
+    noseheigh.value = 100;
+    noselength.value = 100;
+    noseback.value = 100;
+    nosetip.value = 100;
+    nosebridge.value = 100;
+    browheight.value = 100;
+    browwidth.value = 100;
+    cheekbonesheight.value = 100;
+    cheekboneswidth.value = 100;
+    cheekwidth.value = 100;
+    eyelid.value = 100;
+    lips.value = 100;
+    jawwidth.value = 100;
+    jawheight.value = 100;
+    chinlength.value = 100;
+    chinpos.value = 100;
+    chinwidth.value = 100;
+    chinshape.value = 100;
+    neckwidth.value = 100;
+    hatsdraw.value = 1;
+    hatstexture.value = 1;
+    glassesdraw.value = 1;
+    glassestexture.value = 1;
+    earsdraw.value = 1;
+    earstexture.value = 1;
+    watchesdraw.value = 1;
+    watchestexture.value = 1;
+    braceletsdraw.value = 1;
+    braceletstexture.value = 1;
+};
+
+const emitAllClient = (list) => {
+    alt.emit('update:mask', list.mask[0], list.mask[1]);
+    alt.emit('update:hair', list.hair[0]);
+    alt.emit('update:legs', list.legs[0], list.legs[1]);
+    alt.emit('update:shoes', list.shoes[0], list.shoes[1]);
+    alt.emit('update:accessories', list.accessories[0], list.accessories[1]);
+    alt.emit('update:undershirt', list.undershirt[0], list.undershirt[1]);
+    alt.emit('update:bodyArmors', 0, 0);
+    alt.emit('update:decals', list.decals[0], list.decals[1]);
+    alt.emit('update:tops', list.tops[0], list.tops[1]);
+    alt.emit('update:torso', list.torso[0]);
+
+    alt.emit('update:blemishes', list.blemishes[0], list.blemishes[1]);
+    alt.emit('update:facialHair', list.facialHair[0], list.facialHair[1]);
+    alt.emit('update:eyebrows', list.eyebrows[0], list.eyebrows[1]);
+    alt.emit('update:ageing', list.ageing[0], list.ageing[1]);
+    alt.emit('update:makeup', list.makeup[0], list.makeup[1]);
+    alt.emit('update:blush', list.blush[0], list.blush[1]);
+    alt.emit('update:complexion', list.complexion[0], list.complexion[1]);
+    alt.emit('update:sunDamage', list.sunDamage[0], list.sunDamage[1]);
+    alt.emit('update:lipstick', list.lipstick[0], list.lipstick[1]);
+    alt.emit('update:frackles', list.frackles[0], list.frackles[1]);
+    alt.emit('update:chesthair', list.chestHair[0], list.chestHair[1]);
+    alt.emit('update:bodyBlemishes', list.bodyBlemishes[0], list.bodyBlemishes[1]);
+    alt.emit('update:addbodyBlemishes', list.addbodyBlemishes[0], list.addbodyBlemishes[1]);
+
+    alt.emit('update:hairColor', list.hairColor[0], list.hairColor[1]);
+
+    alt.emit('update:eyeColor', list.eyeColor);
+
+    alt.emit('update:eyebrowsColor', list.eyebrowscolor[0], list.eyebrowscolor[1]);
+    alt.emit('update:chesthairColor', list.chesthaircolor[0], list.chesthaircolor[1]);
+    alt.emit('update:blushColor', list.blushcolor[0], list.blushcolor[1]);
+    alt.emit('update:blushColor', list.blushcolor[0], list.blushcolor[1]);
+    alt.emit('update:lipstickColor', list.lipstickcolor[0], list.lipstickcolor[1]);
+    alt.emit('update:beardColor', list.beardcolor[0], list.beardcolor[1]);
+
+    alt.emit('update:pedHeadBlendData', list.parents[0], list.parents[1], list.parents[2], list.parents[3], list.parents[4], list.parents[5]);
+
+    alt.emit('update:nosewidth', list.neckwidth);
+    alt.emit('update:noseheigh', list.noseheigh);
+    alt.emit('update:noselength', list.noselength);
+    alt.emit('update:noseback', list.noseback);
+    alt.emit('update:nosetip', list.nosetip);
+    alt.emit('update:nosebridge', list.nosebridge);
+    alt.emit('update:browheight', list.browheight);
+    alt.emit('update:browwidth', list.browwidth);
+    alt.emit('update:cheekbonesheight', list.cheekbonesheight);
+    alt.emit('update:cheekboneswidth', list.cheekboneswidth);
+    alt.emit('update:eyelid', list.eyelid);
+    alt.emit('update:lips', list.lips);
+    alt.emit('update:jawwidth', list.jawwidth);
+    alt.emit('update:jawheight', list.jawheight);
+    alt.emit('update:chinlength', list.chinlength);
+    alt.emit('update:chinpos', list.chinpos);
+    alt.emit('update:chinwidth', list.chinwidth);
+    alt.emit('update:neckwidth', list.neckwidth);
+    alt.emit('update:hats', list.hats[0], list.hats[1]);
+    alt.emit('update:glasses', list.glasses[0], list.glasses[1]);
+    alt.emit('update:ears', list.ears[0], list.ears[1]);
+    alt.emit('update:watches', list.watches[0], list.watches[1]);
+    alt.emit('update:bracelets', list.bracelets[0], list.bracelets[1]);
+};
+
+const initalLoad = (gender) => {
+    prefill();
+
+    console.log(gender);
+    console.log(setApi(gender));
+
+    let all = [
+        maskDraw,
+        maskTexture,
+        hairDraw,
+        legsDraw,
+        legsTexture,
+        shoesDraw,
+        shoesTexture,
+        accessoriesDraw,
+        accessoriesTexture,
+        undershirtDraw,
+        undershirtTexture,
+        decalsDraw,
+        decalsTexture,
+        topsDraw,
+        topsTexture,
+        blemishes,
+        blemishesOpacity,
+        facialHair,
+        facialHairOpacity,
+        eyebrows,
+        eyebrowsOpacity,
+        ageing,
+        ageingOpacity,
+        makeup,
+        makeupOpacity,
+        blush,
+        blushOpacity,
+        complexion,
+        complexionOpacity,
+        sunDamage,
+        sunDamageOpacity,
+        lipstick,
+        lipstickOpacity,
+        freckles,
+        frecklesOpacity,
+        chestHair,
+        chestHairOpacity,
+        bodyBlemishes,
+        bodyBlemishesOpacity,
+        addbodyBlemishes,
+        addbodyBlemishesOpacity,
+        primaryColor,
+        colorHighlight,
+        eyeColor,
+        eyebrowsprimary,
+        eyebrowshighlight,
+        chesthairprimary,
+        chesthairhighlight,
+        blushprimary,
+        blushhighlight,
+        beardprimary,
+        beardhighlight,
+        lipstickprimary,
+        lipstickhighlight,
+        shapefather,
+        shapemother,
+        shapemix,
+        skinfather,
+        skinmother,
+        skinmix,
+        nosewidth,
+        noseheigh,
+        noselength,
+        noseback,
+        nosetip,
+        nosebridge,
+        browheight,
+        browwidth,
+        cheekbonesheight,
+        cheekboneswidth,
+        cheekwidth,
+        eyelid,
+        lips,
+        jawwidth,
+        jawheight,
+        chinlength,
+        chinpos,
+        chinwidth,
+        chinshape,
+        neckwidth,
+        hatsdraw,
+        hatstexture,
+        glassesdraw,
+        glassestexture,
+        earsdraw,
+        earstexture,
+        watchesdraw,
+        watchestexture,
+        braceletsdraw,
+        braceletstexture,
+    ];
+    let usedlist = [];
+    all.forEach((el) => {
+        usedlist.push(parseInt(el.value));
+    });
+    let list = allfromApi(usedlist);
+    emitAllClient(list);
+};
+
+/**
+ *
+ * @param {Array} list
+ */
 let allfromApi = function (list) {
     let api = setApi(gender);
 
@@ -6845,7 +7202,7 @@ let allfromApi = function (list) {
         genderskin = 'mp_f_freemode_01';
     }
 
-    console.log(list[59]);
+    //console.log(list[59]);
     return {
         forname: forname.value,
         lastname: lastname.value,
@@ -6918,36 +7275,5 @@ let allfromApi = function (list) {
         bracelets: [api.propIndex.watches[list[88] - 1].draw, api.propIndex.watches[list[88] - 1].texture[list[89] - 1]],
 
         //Roleplay Data (Defaults)
-        stamina: 1000,
-        saturation: 100,
-        hydration: 100,
-        toilet: Math.floor(Math.random() * 80),
-        cash: 1000,
-        health: 200,
-        armour: 0,
-        dirty: 0,
-        position: undefined,
-        hotkeys: [], //todo vordefinieren
-        inventory: [], //todo wasser + brot hinzufügen (kleine mänge)
-        job: undefined,
-        jobrank: 0,
-        gang: undefined,
-        gangrank: 0,
-        bank: 0,
-        paycheck: [],
-        working: [false],
-        housing: undefined,
-        inHouse: undefined,
-        alc: 0,
-        drug: 0,
-        energy: 0,
-        drinkedenegry: 0,
-        dimension: 0,
-        persoID: undefined,
-        phone: undefined,
-        licence: [{ type: 1 }], //vorübergehender Führerschein
-        garage: 0,
-        death: [false],
-        lastupdate: Date.now(),
     };
 };

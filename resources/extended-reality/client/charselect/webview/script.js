@@ -54,10 +54,14 @@ const oneMore = function (remaining, id) {
 let componentsGlobal;
 let maximal;
 alt.on('charselect:start', (components, max) => {
+    // console.log(typeof components);
     let id = 0;
     componentsGlobal = components;
     maximal = max;
+
     components.forEach((char) => {
+        char = char._doc;
+        console.log(JSON.stringify(char));
         smenu.innerHTML = smenu.innerHTML + build(id, char.forname, char.lastname);
         id++;
     });
@@ -96,7 +100,7 @@ const selectedchar = function (id) {
     }
     //console.log(document.getElementById(`${prev}`));
 
-    console.log(`typeof id: ${typeof id}`);
+    //console.log(`typeof id: ${typeof id}`);
 
     document.getElementById(`id${selected}`).classList.add('selected');
     //this.classList.add('selected');

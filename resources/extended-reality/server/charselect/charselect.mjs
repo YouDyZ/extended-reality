@@ -1,17 +1,28 @@
 import * as alt from 'alt';
 import * as chat from 'chat';
+import { CharModels } from '../datenbank/modules/exports';
 
-//alt.emit('charselect:start', player, playerchars, maxchars);
-alt.on('charselect:start', (player, charakters, max, dbID) => {
-    alt.emitClient(player, 'charselect:init', max, charakters);
-    player.setMeta('dbID', dbID);
-    alt.log('charselect:open');
+//Intitial Emit
+alt.on('charselect:start', (playerID, maxchars) => {
+    let player = alt.Player.getByID(playerID);
+    alt.log('player: ', player.name);
+    const playerid = player.getSyncedMeta('dbID');
+    alt.log('dbID: ', JSON.stringify(playerid));
+    CharModels.find({ player: playerid })
+        .then((chars) => {
+            alt.emitClient(player, 'charselect:init', chars, maxchars);
+        })
+        .catch((err) => {
+            console.log('ERROR', err.message);
+        });
 });
 
+//Shot from Chareditor
 alt.on('charselect:reopen', (player, charakters, max) => {
     alt.emitClient(player, 'charselect:regenerate', max, charakters);
 });
 
+//Set Postision new
 alt.onClient('charselect:resetpos', (player) => {
     player.pos = {
         x: 2021.7230224609375,
@@ -20,7 +31,7 @@ alt.onClient('charselect:resetpos', (player) => {
     };
 });
 
-
+//load Selected Charakter
 alt.on('charselect:finished', (player, char) => {
     player.pos = {
         x: char.position.x,
@@ -45,14 +56,14 @@ alt.on('charselect:finished', (player, char) => {
 });
 
 alt.onClient('charselect:skin', (player, skin, char) => {
-    player.model = char.genderskin;
+    player.model = char._doc.genderskin;
     player.pos = {
         x: 2021.7230224609375,
         y: 3020.47900390625,
         z: -72.6951904296875,
     };
 
-    alt.emitClient(player, 'charselect:props', char);
+    alt.emitClient(player, 'charselect:props', char._doc);
 });
 
 alt.onClient('charselect:new', (player) => {
@@ -63,4 +74,3 @@ alt.onClient('charselect:new', (player) => {
         z: -72.6951904296875,
     };
 });
-

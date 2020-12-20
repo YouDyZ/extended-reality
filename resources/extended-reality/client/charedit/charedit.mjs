@@ -103,44 +103,45 @@ alt.on('charedit:start', (x, y, z) => {
     });
     */
 
-    let finishercount = 0;
-    let finisherInterval;
-    const finisherTimer = function (data) {
-        finishercount = 0;
-        if (readyFinished) {
-            finisherInterval = alt.setInterval(() => {
-                alt.log(finishercount);
-                finishercount++;
-                if (finishercount >= 10) {
-                    alt.log(finishercount);
-                    alt.clearInterval(finisherInterval);
-                    alt.log('10');
-                    alt.emitServer('database:newChar', data);
-                    finishTimeout();
-                }
-            }, 20);
-            //finisherInterval();
-        } else {
-            editor.emit('error', 'Warte bitte mit dem erneuten Abschicken.');
-        }
+    alt.onServer('database:newChar:error', (error) => {
+        editor.emit('error', error);
+        blockFinish = false;
+    });
+
+    alt.onServer('database:newChar:finish', () => {});
+
+    const checkErrorsFinish = () => {
+        editor.emit('finish:error', errorlog);
     };
 
-    let fTimeoutIntervall;
-    let fTimeoutCount = 0;
-    let readyFinished = true;
-    const finishTimeout = function () {
-        readyFinished = false;
-        fTimeoutIntervall = alt.setInterval(() => {
-            fTimeoutCount++;
-            if (fTimeoutCount >= 50) {
-                alt.clearInterval(fTimeoutIntervall);
-                readyFinished = true;
-            }
-        }, 200);
+    const senddata = (data) => {
+        alt.log('sending data...');
+        alt.emitServer('database:newChar', data);
     };
+
+    const blockFinishTimer = () => {
+        alt.log('blocking Finish...');
+        blockFinish = true;
+        alt.setTimeout(() => {
+            alt.log('blocking Finish Done');
+            checkErrorsFinish();
+            blockFinish = false;
+        }, 100000);
+    };
+
+    let blockFinish = false;
 
     editor.on('editor:finish', (data) => {
-        finisherTimer(data);
+        if (blockFinish) {
+            alt.log('finish:error');
+            editor.emit('error', 'Warte bitte mit dem erneuten Abschicken.');
+            return;
+        } else {
+            alt.log('editor:finish');
+            alt.log('Vorname: ', data.forname, 'Nachname: ', data.lastname);
+            senddata(data);
+            blockFinishTimer();
+        }
     });
 
     /* 
@@ -152,15 +153,8 @@ alt.on('charedit:start', (x, y, z) => {
     });
 
     editor.on('gender:get', () => {
-        let male = native.isPedModel(alt.Player.local.scriptID, 0x705e61f2);
-
-        // alt.log(male);
-
-        if (male) {
-            editor.emit('gender:result', 'male');
-        } else {
-            editor.emit('gender:result', 'female');
-        }
+        alt.emitServer('gender:male');
+        editor.emit('gender:result', 'male');
     });
 
     /*
@@ -206,6 +200,9 @@ alt.on('charedit:start', (x, y, z) => {
     });
 
     editor.on('update:hair', (draw, texture) => {
+        if (texture == undefined) {
+            texture = 0;
+        }
         native.setPedComponentVariation(alt.Player.local.scriptID, 2, draw, texture, 0);
     });
 
@@ -238,6 +235,9 @@ alt.on('charedit:start', (x, y, z) => {
     });
 
     editor.on('update:torso', (draw, texture) => {
+        if (texture == undefined) {
+            texture = 0;
+        }
         native.setPedComponentVariation(alt.Player.local.scriptID, 3, draw, texture, 0);
     });
 
