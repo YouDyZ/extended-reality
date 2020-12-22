@@ -10,9 +10,8 @@ import * as login from './login/login.mjs';
 //import * as hud from './hud/hud.mjs';
 import * as whitelist from './whitelist/whitelist.mjs';
 //resources\extended-reality\client\charedit\charedit.mjs
-//import * as charedit from './charedit/charedit.mjs';
-//import * as charselect from './charselect/charselect.mjs';
+import * as charedit from './charedit/charedit.mjs';
+import * as charselect from './charselect/charselect.mjs';
 import * as statistic from './statistic/statistic.mjs';
 import * as attachment from './attachment/attachment.mjs';
 import * as admin from './admin/admin.mjs';
-

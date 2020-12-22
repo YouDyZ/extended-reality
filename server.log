@@ -1,35 +1,69 @@
-[17:13:29] alt:V Server, build #1301, branch release
-[17:13:29] Starting Extended-Reality on 127.0.0.1:22005
-[17:13:29] Loading resource firstres
-[17:13:29] Loading resource chat
-[17:13:29] Loaded resource chat
-[17:13:29] Loaded resource firstres
-[17:13:29] Loading resource pointing
-[17:13:29] Loaded resource pointing
-[17:13:29] Loading resource extended-reality
-[17:13:30] Loaded resource extended-reality
-[17:13:30] Loading resource extended-map
-[17:13:30] Loaded resource extended-map
-[17:13:30] Loading resource mrpd
-[17:13:30] Loaded resource mrpd
-[17:13:30] Loading resource extended-test
-[17:13:30] Loaded resource extended-test
-[17:13:30] Loading resource club-bahama
-[17:13:30] Loaded resource club-bahama
-[17:13:30] Loading resource hospital-pillbox
-[17:13:30] Loaded resource hospital-pillbox
-[17:13:30] Loading resource haircut_1
-[17:13:30] Loaded resource haircut_1
-[17:13:30] Loading resource Clothes-Menu-master
-[17:13:30] Loaded resource Clothes-Menu-master
-[17:13:30] Loading resource aston martin
-[17:13:31] Loaded resource aston martin
-[17:13:31] Loading resource renault
-[17:13:31] Loaded resource renault
-[17:13:31] Starting HTTP server on 127.0.0.1:22005
-[17:13:31] Console thread started (ThreadId: 11972)
-[17:13:31] Main thread started (ThreadId: 12788)
-[17:13:31] Colshape thread started (ThreadId: 10236)
-[17:13:31] EntityStreamer thread started (ThreadId: 8292)
-[17:13:31] Network thread started (ThreadId: 10868)
-[17:13:31] Server started
+[18:08:35] alt:V Server, build #1302, branch release
+[18:08:35] Starting Extended-Reality on 127.0.0.1:22005
+[18:08:35] Loading resource firstres
+[18:08:35] Loading resource chat
+[18:08:36] Loaded resource chat
+[18:08:36] Loaded resource firstres
+[18:08:36] Loading resource pointing
+[18:08:36] Loaded resource pointing
+[18:08:36] Loading resource extended-reality
+[18:08:38] Loaded resource extended-reality
+[18:08:38] Loading resource extended-map
+[18:08:38] Loaded resource extended-map
+[18:08:38] Loading resource mrpd
+[18:08:39] Loaded resource mrpd
+[18:08:39] Loading resource extended-test
+[18:08:41] Loaded resource extended-test
+[18:08:41] Loading resource club-bahama
+[18:08:41] Loaded resource club-bahama
+[18:08:41] Loading resource hospital-pillbox
+[18:08:41] Loaded resource hospital-pillbox
+[18:08:41] Loading resource haircut_1
+[18:08:41] Loaded resource haircut_1
+[18:08:41] Loading resource Clothes-Menu-master
+[18:08:42] Loaded resource Clothes-Menu-master
+[18:08:42] Loading resource aston martin
+[18:08:49] Loaded resource aston martin
+[18:08:49] Loading resource renault
+[18:08:51] Loaded resource renault
+[18:08:51] Starting HTTP server on 127.0.0.1:22005
+[18:08:51] Console thread started (ThreadId: 3268)
+[18:08:51] Main thread started (ThreadId: 9036)
+[18:08:51] Colshape thread started (ThreadId: 10920)
+[18:08:51] EntityStreamer thread started (ThreadId: 20372)
+[18:08:51] Network thread started (ThreadId: 11312)
+[18:08:51] Server started
+[18:08:58][Warning] ReceiveData() took: 80 ms, received events:  0 , packets sent:  0
+[18:09:33][Warning] resourceManager.Update() took: 119 ms
+[18:09:33][Warning] resourceManager.Update() took: 103 ms
+[18:09:33] player:  YouDyZ
+[18:09:33] dbID:  "5f8897c4c3a99952cc6e06ef"
+[18:14:24][Warning] Event handler at extended-reality:file:///E:/github/extended-reality/resources/extended-reality/server/datenbank/newChar.mjs:5 was too long 11ms
+[18:14:25][Warning] resourceManager.Update() took: 56 ms
+[18:14:51][Warning] resourceManager.Update() took: 102 ms
+[18:14:52][Warning] resourceManager.Update() took: 69 ms
+[18:14:52] player:  YouDyZ
+[18:14:52] dbID:  "5f8897c4c3a99952cc6e06ef"
+[18:14:52][Warning] Event handler at extended-reality:file:///E:/github/extended-reality/resources/extended-reality/server/charselect/charselect.mjs:6 was too long 13ms
+[18:15:12] [chat:cmd] YouDyZ: /pd
+[18:15:12][Warning] Event handler at chat:file:///E:/github/extended-reality/resources/chat/index.mjs:15 was too long 40ms
+[18:37:21][Warning] resourceManager.Update() took: 109 ms
+[18:37:55][Warning] ReceiveData() took: 57 ms, received events:  0 , packets sent:  0
+[18:38:43][Warning] resourceManager.Update() took: 89 ms
+[18:39:51][Warning] resourceManager.Update() took: 80 ms
+[18:41:46][Warning] resourceManager.Update() took: 74 ms
+[18:41:53][Warning] resourceManager.Update() took: 69 ms
+[18:42:22][Warning] resourceManager.Update() took: 67 ms
+[18:42:51][Warning] ReceiveData() took: 54 ms, received events:  0 , packets sent:  0
+[18:43:03][Warning] ReceiveData() took: 105 ms, received events:  0 , packets sent:  0
+[18:43:05][Warning] resourceManager.Update() took: 67 ms
+[18:45:22][Warning] ReceiveData() took: 105 ms, received events:  0 , packets sent:  0
+[18:57:02][Warning] resourceManager.Update() took: 55 ms
+[19:02:26][Warning] resourceManager.Update() took: 52 ms
+[19:03:38][Warning] resourceManager.Update() took: 78 ms
+[19:23:41][Warning] resourceManager.Update() took: 5479 ms
+[19:28:39][Warning] resourceManager.Update() took: 57 ms
+[19:32:08][Warning] resourceManager.Update() took: 66 ms
+[19:33:29][Warning] ReceiveData() took: 67 ms, received events:  0 , packets sent:  0
+[19:34:49][Warning] ReceiveData() took: 70 ms, received events:  0 , packets sent:  0
+[19:41:36][Warning] resourceManager.Update() took: 59 ms

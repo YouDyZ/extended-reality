@@ -230,24 +230,40 @@ input::-webkit-inner-spin-button {
     max-height: 0;
 }
 
-.item#detail:target .smenu {
-    max-height: 9999999999px;
-}
-
-.item:target .smenu {
-    max-height: 9999999999px;
-}
-
-.item#headmenue:target .smenu {
-    max-height: 9999999999px;
+.item#informations:target .smenu {
+    max-height: 500px;
 }
 
 .item#gender:target .smenu {
-    max-height: 9999999999px;
+    max-height: 180px;
+}
+
+.item#parents:target .smenu {
+    max-height: 900px;
+}
+
+.item#eyescolormenu:target .smenu {
+    max-height: 1042px;
+}
+
+.item#detail:target .smenu {
+    max-height: 2800px;
+}
+
+.item#headmenue:target .smenu {
+    max-height: 2000px;
 }
 
 .item#kleidung:target .smenu {
-    max-height: 9999999999px;
+    max-height: 760px;
+}
+
+.item#accessoriesmenu:target .smenu {
+    max-height: 1000px;
+}
+
+.item#finish:target .smenu {
+    max-height: 500px;
 }
 
 .smenu div.component {

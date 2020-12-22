@@ -618,3 +618,22 @@ chat.registerCmd('heat', (player) => {
         alt.emitClient(player, 'heat:toggle', true);
     }
 });
+
+let islandColShape = new alt.ColshapeCircle(5269.1845703125, -5023.8134765625, 3000);
+islandColShape.name = 'Island';
+
+alt.on('entityEnterColshape', (colshape, entity) => {
+    if (colshape.name == 'Island' && entity.valid) {
+        let player = entity;
+        alt.emitClient(player, 'enableNewisland', true);
+        alt.emitClient(player, 'loadIsland');
+    }
+});
+
+alt.on('entityLeaveColshape', (colshape, entity) => {
+    if (colshape.name == 'Island' && entity.valid) {
+        let player = entity;
+        alt.emitClient(player, 'enableNewisland', false);
+        alt.emitClient(null, 'removeIsland');
+    }
+});
