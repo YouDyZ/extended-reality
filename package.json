@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@altv/types": "^1.0.19",
-    "eslint": "^7.16.0"
+    "eslint": "^7.29.0"
   },
   "repository": {
     "type": "git",
